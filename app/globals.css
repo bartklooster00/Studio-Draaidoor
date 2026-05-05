@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0b0b0b;
+  color: #f4efe7;
+}
+
+::selection {
+  background: #6f8196;
+  color: #0b0b0b;
+}
+
+a {
+  text-underline-offset: 4px;
+}
