@@ -7,25 +7,24 @@ const config: Config = {
     "./lib/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
+    fontFamily: {
+      sans: ["Manrope", "Inter", "Arial", "sans-serif"]
+    },
     extend: {
       colors: {
-        ink: "#0b0b0b",
-        coal: "#141313",
-        smoke: "#24211f",
-        bone: "#f4efe7",
+        ink: "#050505",
+        coal: "#171A1D",
+        smoke: "#171A1D",
+        bone: "#F5F3EF",
         copper: {
-          DEFAULT: "#6F8196",
-          dark: "#56687D",
-          light: "#A9B7C5"
+          DEFAULT: "#5F7485",
+          dark: "#5F7485",
+          light: "#5F7485"
         },
-        moss: "#9aa88a"
-      },
-      fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        mono: ["Menlo", "Monaco", "Consolas", "monospace"]
+        moss: "#A9B0B6"
       },
       boxShadow: {
-        glow: "0 24px 80px rgba(111, 129, 150, 0.16)"
+        glow: "none"
       }
     }
   },

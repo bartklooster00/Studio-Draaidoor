@@ -16,13 +16,13 @@ html {
 
 body {
   margin: 0;
-  background: #0b0b0b;
-  color: #f4efe7;
+  background: #050505;
+  color: #f5f3ef;
 }
 
 ::selection {
-  background: #6f8196;
-  color: #0b0b0b;
+  background: #5f7485;
+  color: #050505;
 }
 
 a {

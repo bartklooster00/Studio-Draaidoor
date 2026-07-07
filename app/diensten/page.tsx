@@ -34,7 +34,7 @@ export default function DienstenPage() {
               <StaggerItem key={service.title}>
                 <article className="grid gap-5 rounded-lg border border-bone/10 bg-bone/[0.032] p-6 transition duration-300 hover:border-copper/35 md:grid-cols-[0.28fr_1fr] lg:p-7">
                   <div>
-                    <p className="font-mono text-xs text-copper">
+                    <p className="text-xs font-bold text-copper">
                       0{index + 1}
                     </p>
                     <h2 className="mt-4 text-2xl font-semibold text-bone">
@@ -69,7 +69,7 @@ export default function DienstenPage() {
                 className="flex items-center gap-4 rounded-lg border border-bone/10 bg-bone/[0.03] px-5 py-4"
                 key={step}
               >
-                <span className="grid size-9 shrink-0 place-items-center rounded-md border border-copper/25 bg-copper/[0.08] font-mono text-sm text-copper">
+                <span className="grid size-9 shrink-0 place-items-center rounded-md border border-copper/25 bg-copper/[0.08] text-sm font-bold text-copper">
                   {index + 1}.
                 </span>
                 <span className="text-bone/[0.78]">{step}</span>

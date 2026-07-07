@@ -16,6 +16,7 @@ type Project = {
   intro: string;
   videoUrl: string;
   longDescription: string[];
+  result?: string;
   href?: string;
 };
 

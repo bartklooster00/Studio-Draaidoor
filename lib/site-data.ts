@@ -14,10 +14,7 @@ export const site = {
 };
 
 export const navigation = [
-  { label: "Home", href: "/" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Diensten", href: "/diensten" },
-  { label: "Over", href: "/over" },
   { label: "Contact", href: "/contact" }
 ];
 
@@ -47,7 +44,9 @@ export const portfolioProjects = [
       "Voor EEW Energy from Waste Delfzijl B.V. maakte ik een veiligheidsfilm die medewerkers en bezoekers snel en duidelijk informeert over de belangrijkste veiligheidsregels op locatie. De focus lag op heldere communicatie, een professionele uitstraling en een compacte opzet die beter aansluit op de praktijk.",
     longDescription: [
       "Ik maakte een veiligheidsfilm / poortinstructie in het Nederlands, Engels en Duits, zodat medewerkers en bezoekers op een toegankelijke en professionele manier worden geïnformeerd over de veiligheidsregels op locatie."
-    ]
+    ],
+    result:
+      "Een compacte veiligheidsfilm die sneller te bekijken is en direct inzetbaar is voor bezoekers en medewerkers op locatie."
   },
   {
     slug: "basher-beatdown-promo",
@@ -73,7 +72,9 @@ export const portfolioProjects = [
       "Voor Crash Interactive maakte ik een promo video voor het spel Basher Beatdown. Het doel was om niet alleen het spel te laten zien, maar vooral ook het gevoel, tempo en de energie van het spelen over te brengen.",
     longDescription: [
       "Tijdens deze productie werkte ik zonder vast script en legde ik speelmomenten vast om de energie, dynamiek en beleving van het spel op een natuurlijke manier over te brengen."
-    ]
+    ],
+    result:
+      "Een energieke promo die sfeer, spelbeeld en beleving in korte tijd samenbrengt."
   },
   {
     slug: "eew-qhse-lancering",
@@ -99,7 +100,9 @@ export const portfolioProjects = [
       "Voor EEW Energy from Waste Delfzijl B.V. maakte ik een lanceringsvideo voor de QHSE-afdeling. De video is ontwikkeld om medewerkers op een duidelijke manier kennis te laten maken met de mensen achter de afdeling en hun rol binnen de organisatie.",
     longDescription: [
       "In deze video introduceer ik de QHSE-afdeling op een duidelijke en toegankelijke manier, zodat medewerkers snel zien wie waarvoor verantwoordelijk is."
-    ]
+    ],
+    result:
+      "Een heldere interne video die de afdeling zichtbaar maakt en collega’s snel context geeft."
   }
 ];
 

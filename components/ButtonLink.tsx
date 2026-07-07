@@ -1,10 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
-
-const MotionLink = motion.create(Link);
 
 type ButtonLinkProps = {
   href: string;
@@ -17,24 +14,20 @@ export function ButtonLink({
   children,
   variant = "primary"
 }: ButtonLinkProps) {
-  const reduceMotion = useReducedMotion();
   const classes = {
     primary:
-      "border border-copper bg-copper text-ink shadow-[0_14px_36px_rgba(111,129,150,0.12)] hover:border-bone hover:bg-bone hover:text-ink",
+      "border border-white bg-white text-[#050505] hover:border-[#F5F3EF] hover:bg-[#F5F3EF] hover:text-[#050505] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
     secondary:
-      "border border-bone/20 bg-bone/[0.035] text-bone hover:border-copper/70 hover:bg-bone/[0.07] hover:text-bone",
-    dark: "border border-ink bg-ink text-bone shadow-[0_14px_36px_rgba(11,11,11,0.18)] hover:border-copper hover:bg-copper hover:text-ink"
+      "border border-white/[0.28] bg-transparent text-white hover:border-white/[0.42] hover:bg-white/[0.06] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
+    dark: "border border-white/[0.28] bg-transparent text-white hover:border-white/[0.42] hover:bg-white/[0.06] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
   }[variant];
 
   return (
-    <MotionLink
-      className={`inline-flex min-h-12 min-w-40 items-center justify-center rounded-md px-6 text-sm font-semibold transition duration-300 ease-out ${classes}`}
+    <Link
+      className={`inline-flex h-14 w-full min-w-40 items-center justify-center rounded-lg px-8 text-lg font-bold transition duration-300 ease-out min-[900px]:w-auto ${classes}`}
       href={href}
-      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={reduceMotion ? undefined : { y: -2 }}
-      whileTap={reduceMotion ? undefined : { y: 0 }}
     >
       {children}
-    </MotionLink>
+    </Link>
   );
 }
