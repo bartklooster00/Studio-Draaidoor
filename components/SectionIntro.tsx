@@ -19,7 +19,7 @@ export function SectionIntro({
   const Heading = headingLevel;
 
   return (
-    <StaggerContainer className="max-w-3xl">
+    <StaggerContainer className="max-w-[780px]">
       {eyebrow ? (
         <StaggerItem>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.26em] text-copper">
@@ -28,13 +28,13 @@ export function SectionIntro({
         </StaggerItem>
       ) : null}
       <StaggerItem>
-        <Heading className="max-w-2xl text-3xl font-semibold leading-tight text-bone sm:text-4xl">
+        <Heading className="type-section max-w-[720px] text-bone">
           {title}
         </Heading>
       </StaggerItem>
       {text ? (
         <StaggerItem>
-          <p className="mt-4 max-w-2xl leading-7 text-bone/[0.66]">
+          <p className="body-copy mt-5 max-w-[68ch] text-bone/[0.72]">
             {text}
           </p>
         </StaggerItem>

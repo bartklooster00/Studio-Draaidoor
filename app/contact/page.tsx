@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="bg-ink py-16 sm:py-20">
-      <Container className="grid gap-10 lg:grid-cols-[0.85fr_1.05fr] lg:items-start">
+    <section className="page-offset bg-ink">
+      <Container className="section-space grid gap-10 lg:grid-cols-[0.85fr_1.05fr] lg:items-start lg:gap-[72px]">
         <FadeUp>
           <SectionIntro
             eyebrow="Contact"

@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 
 export default function OverPage() {
   return (
-    <>
-      <section className="bg-ink py-16 sm:py-20">
+    <div className="page-offset bg-ink">
+      <section className="section-space bg-ink">
         <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <SectionIntro
@@ -31,7 +31,7 @@ export default function OverPage() {
               text="Ik ben Bart Klooster, oprichter van Studio Draaidoor. Ik maak videoproducties voor bedrijven, organisaties en events die niet alleen goed moeten ogen, maar ook functioneel moeten zijn in communicatie en uitstraling."
             />
             <FadeUp className="mt-8">
-              <div className="rounded-lg border border-bone/10 bg-bone/[0.035] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.18)] lg:p-7">
+              <div className="rounded-lg border border-bone/10 bg-bone/[0.035] p-6 lg:p-7">
                 <h2 className="text-2xl font-semibold text-bone">
                   Bart Klooster
                 </h2>
@@ -49,7 +49,7 @@ export default function OverPage() {
             </FadeUp>
           </div>
           <FadeUp delay={0.08}>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-bone/10 shadow-glow lg:aspect-[5/6]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-bone/10 lg:aspect-[5/6]">
               <Image
                 alt="Bart Klooster met dronecontroller in het veld"
                 className="object-cover object-[50%_35%] md:object-[50%_36%]"
@@ -62,7 +62,7 @@ export default function OverPage() {
         </Container>
       </section>
 
-      <section className="bg-coal py-16 sm:py-20">
+      <section className="section-space-compact bg-coal">
         <Container>
           <StaggerContainer className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
@@ -97,6 +97,6 @@ export default function OverPage() {
       </section>
 
       <CtaBand />
-    </>
+    </div>
   );
 }

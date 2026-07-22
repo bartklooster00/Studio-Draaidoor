@@ -24,7 +24,7 @@ export function ButtonLink({
 
   return (
     <Link
-      className={`inline-flex h-14 w-full min-w-40 items-center justify-center rounded-lg px-8 text-lg font-bold transition duration-300 ease-out min-[900px]:w-auto ${classes}`}
+      className={`inline-flex h-14 w-full min-w-40 items-center justify-center whitespace-nowrap rounded-lg px-8 text-lg font-bold transition duration-300 ease-out sm:w-auto ${classes}`}
       href={href}
     >
       {children}

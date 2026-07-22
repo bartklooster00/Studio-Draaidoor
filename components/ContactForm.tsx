@@ -62,7 +62,7 @@ export function ContactForm() {
   if (state.succeeded) {
     return (
       <div
-        className="rounded-lg border border-copper/30 bg-bone/[0.035] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.18)] sm:p-7"
+        className="rounded-lg border border-copper/30 bg-bone/[0.035] p-6 sm:p-7"
         role="status"
       >
         <p className="text-lg font-semibold leading-7 text-bone">
@@ -75,7 +75,7 @@ export function ContactForm() {
 
   return (
     <form
-      className="rounded-lg border border-bone/10 bg-bone/[0.035] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.18)] sm:p-7"
+      className="rounded-lg border border-bone/10 bg-bone/[0.035] p-6 sm:p-7"
       noValidate
       onSubmit={onSubmit}
     >
@@ -167,7 +167,7 @@ export function ContactForm() {
       ) : null}
 
       <button
-        className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-md border border-copper bg-copper px-6 text-sm font-semibold text-ink shadow-[0_14px_36px_rgba(111,129,150,0.12)] transition duration-300 ease-out hover:border-bone hover:bg-bone disabled:cursor-not-allowed disabled:opacity-65 disabled:hover:border-copper disabled:hover:bg-copper sm:w-auto sm:min-w-40"
+        className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-md border border-copper bg-copper px-6 text-sm font-semibold text-white transition duration-300 ease-out hover:border-bone hover:bg-bone hover:text-ink disabled:cursor-not-allowed disabled:opacity-65 disabled:hover:border-copper disabled:hover:bg-copper disabled:hover:text-white sm:w-auto sm:min-w-40"
         disabled={isDisabled}
         type="submit"
       >

@@ -19,33 +19,43 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 h-[68px] border-b border-[#A9B0B6]/[0.08] bg-[rgba(5,5,5,0.72)] backdrop-blur-[10px] transition duration-300 min-[768px]:h-[76px] ${
-        isScrolled ? "bg-[rgba(5,5,5,0.78)]" : ""
+      className={`fixed inset-x-0 top-0 z-50 h-[66px] border-b border-white/[0.08] bg-[#050505] transition-[height,background-color,backdrop-filter] duration-200 motion-reduce:transition-none lg:h-[88px] ${
+        isScrolled
+          ? "bg-[rgba(3,3,3,0.98)] backdrop-blur-[4px] lg:!h-[66px]"
+          : ""
       }`}
     >
       <nav
-        className="mx-auto flex h-[68px] w-full max-w-[1820px] items-center justify-between px-[clamp(24px,5.6vw,112px)] min-[768px]:h-[76px]"
+        className="site-container flex h-full items-center justify-between"
         aria-label="Hoofdnavigatie"
       >
-        <Link className="group flex items-center gap-5" href="/">
+        <Link className="group flex items-center gap-3 sm:gap-5" href="/">
           <Image
             alt=""
             aria-hidden
-            className="h-auto w-[38px] min-[768px]:w-[42px]"
+            className={`h-auto transition-[width] duration-200 motion-reduce:transition-none ${
+              isScrolled
+                ? "w-[34px] min-[768px]:w-[34px]"
+                : "w-[38px] min-[768px]:w-[42px]"
+            }`}
             height={29}
             priority
             src="/brand/studio-draaidoor-camera-d.svg"
             width={48}
           />
-          <span className="text-xl font-bold leading-none tracking-normal text-white transition duration-300 group-hover:text-white min-[768px]:text-2xl">
+          <span
+            className={`inline font-bold leading-none tracking-normal text-white transition-[font-size] duration-200 group-hover:text-white motion-reduce:transition-none ${
+              isScrolled ? "text-[16px] lg:text-[18px]" : "text-[17px] lg:text-xl"
+            }`}
+          >
             {site.name}
           </span>
         </Link>
 
-        <div className="flex items-center gap-5 min-[768px]:gap-10">
+        <div className="flex items-center gap-5 sm:gap-10">
           {navigation.map((item) => (
             <Link
-              className="relative text-base font-medium tracking-normal text-[#F5F3EF]/[0.82] transition duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-copper after:transition-transform after:duration-300 hover:text-white hover:after:scale-x-100 min-[768px]:text-xl"
+              className="text-base font-medium leading-none tracking-normal text-[#F5F3EF]/[0.82] transition-colors duration-200 hover:text-white sm:text-lg"
               href={item.href}
               key={item.href}
             >

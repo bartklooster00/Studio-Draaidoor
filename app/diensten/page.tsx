@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 
 export default function DienstenPage() {
   return (
-    <>
-      <section className="bg-ink py-16 sm:py-20">
+    <div className="page-offset bg-ink">
+      <section className="section-space bg-ink">
         <Container>
           <SectionIntro
             eyebrow="Diensten"
@@ -56,7 +56,7 @@ export default function DienstenPage() {
         </Container>
       </section>
 
-      <section className="bg-coal py-16 sm:py-20">
+      <section className="section-space-compact bg-coal">
         <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <SectionIntro
             eyebrow="Werkwijze"
@@ -84,6 +84,6 @@ export default function DienstenPage() {
         title="Een videoproject bespreken?"
         buttonLabel="Project bespreken"
       />
-    </>
+    </div>
   );
 }

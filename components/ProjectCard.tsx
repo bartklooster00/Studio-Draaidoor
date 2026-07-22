@@ -28,8 +28,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             src={project.image}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent" />
-          <p className="absolute bottom-4 left-4 rounded-md border border-bone/10 bg-ink/75 px-3 py-1.5 text-xs font-medium text-bone backdrop-blur">
+          <div className="absolute inset-0 bg-ink/55" />
+          <p className="absolute bottom-4 left-4 text-xs font-medium text-bone">
             {project.category}
           </p>
         </div>
@@ -58,7 +58,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   );
 
   const className =
-    "group block h-full overflow-hidden rounded-lg border border-bone/[0.12] bg-smoke shadow-[0_24px_70px_rgba(0,0,0,0.22)] outline-none transition duration-300 hover:border-copper/45 focus-visible:border-copper/70";
+    "group block h-full overflow-hidden rounded-lg border border-bone/[0.12] bg-smoke outline-none transition duration-300 hover:border-copper/45 focus-visible:border-copper/70";
 
   if (project.href) {
     return (

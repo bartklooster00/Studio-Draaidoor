@@ -32,6 +32,7 @@ export const portfolioProjects = [
     seoDescription:
       "Voor EEW Delfzijl maakte ik een compacte veiligheidsfilm en poortinstructie die medewerkers en bezoekers snel en helder informeert over de belangrijkste veiligheidsregels op locatie.",
     videoUrl: "https://www.youtube-nocookie.com/embed/7lTGdY5Y5Gw",
+    posterSrc: "/posters/eew-delfzijl-veiligheidsfilm.webp",
     goal:
       "Een korte, duidelijke en professioneel afgewerkte veiligheidsfilm maken die beter aansluit op de praktijk en de vorige instructievideo van circa 35-40 minuten vervangt. De nieuwe video brengt de belangrijkste veiligheidsinformatie in ongeveer 6,5 minuut helder over aan medewerkers en bezoekers.",
     role:
@@ -60,6 +61,7 @@ export const portfolioProjects = [
     seoDescription:
       "Voor Crash Interactive maakte ik een promo video voor Basher Beatdown die de sfeer, energie en gameplay van het spel krachtig overbrengt.",
     videoUrl: "https://www.youtube-nocookie.com/embed/OF1OX8UL5_k",
+    posterSrc: "/posters/basher-beatdown-promo.webp",
     goal:
       "Mensen kennis laten maken met het spel en het gevoel van de gameplay overbrengen in een video die zowel sfeer als spelbeeld sterk laat zien.",
     role:
@@ -89,6 +91,7 @@ export const portfolioProjects = [
     seoDescription:
       "Voor EEW Delfzijl maakte ik een lanceringsvideo voor de QHSE-afdeling om medewerkers kennis te laten maken met het team en hun functies.",
     videoUrl: "https://www.youtube-nocookie.com/embed/J6NJQWKars4",
+    posterSrc: "/posters/eew-qhse-lancering.webp",
     goal:
       "Medewerkers kennis laten maken met de mensen van de QHSE-afdeling en duidelijk maken wie welke functie heeft.",
     role: "Ik verzorgde het project van A tot Z.",

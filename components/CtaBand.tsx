@@ -17,7 +17,7 @@ export function CtaBand({
   buttonLabel = "Project bespreken"
 }: CtaBandProps) {
   return (
-    <section className="border-y border-copper/10 bg-bone py-12 text-ink sm:py-14">
+    <section className="border-y border-black/10 bg-bone py-12 text-ink sm:py-14">
       <Container className="grid gap-6 md:grid-cols-[1.4fr_auto] md:items-center">
         <div>
           <StaggerContainer>
@@ -27,7 +27,7 @@ export function CtaBand({
               </p>
             </StaggerItem>
             <StaggerItem>
-              <h2 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight sm:text-4xl">
+              <h2 className="mt-3 max-w-3xl text-3xl font-bold leading-[1.08] sm:text-4xl">
                 {title}
               </h2>
             </StaggerItem>
