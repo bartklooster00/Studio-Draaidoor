@@ -13,6 +13,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.studiodraaidoor.nl"),
   title: {
     default:
       "Studio Draaidoor | Bedrijfsvideo laten maken voor bedrijven en organisaties",

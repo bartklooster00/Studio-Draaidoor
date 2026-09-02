@@ -15,7 +15,10 @@ export const metadata: Metadata = {
       "Diensten | Videoproductie voor bedrijven, interviews, aftermovies en podcasts"
   },
   description:
-    "Ik maak videoproducties voor bedrijven en organisaties, zoals bedrijfsvideo’s, interviews, podcasts en aftermovies. Bekijk welke vorm het beste past bij uw doel."
+    "Ik maak videoproducties voor bedrijven en organisaties, zoals bedrijfsvideo’s, interviews, podcasts en aftermovies. Bekijk welke vorm het beste past bij uw doel.",
+  alternates: {
+    canonical: "/diensten"
+  }
 };
 
 export default function DienstenPage() {

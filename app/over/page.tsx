@@ -15,7 +15,10 @@ export const metadata: Metadata = {
       "Over Studio Draaidoor | Bart Klooster, videograaf voor bedrijven en organisaties"
   },
   description:
-    "Ik ben Bart Klooster van Studio Draaidoor. Ik maak videoproducties voor bedrijven, organisaties en events met focus op heldere communicatie en professionele uitstraling."
+    "Ik ben Bart Klooster van Studio Draaidoor. Ik maak videoproducties voor bedrijven, organisaties en events met focus op heldere communicatie en professionele uitstraling.",
+  alternates: {
+    canonical: "/over"
+  }
 };
 
 export default function OverPage() {

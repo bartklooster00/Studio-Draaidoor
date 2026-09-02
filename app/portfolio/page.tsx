@@ -14,7 +14,10 @@ export const metadata: Metadata = {
     absolute: "Portfolio | Videoprojecten van Studio Draaidoor"
   },
   description:
-    "Bekijk videoprojecten van Studio Draaidoor, van veiligheidsfilms en promo video’s tot lanceringsvideo’s voor bedrijven en organisaties."
+    "Bekijk videoprojecten van Studio Draaidoor, van veiligheidsfilms en promo video’s tot lanceringsvideo’s voor bedrijven en organisaties.",
+  alternates: {
+    canonical: "/portfolio"
+  }
 };
 
 export default function PortfolioPage() {

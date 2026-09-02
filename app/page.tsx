@@ -7,7 +7,10 @@ export const metadata: Metadata = {
       "Studio Draaidoor | Bedrijfsvideo laten maken voor bedrijven en organisaties"
   },
   description:
-    "Studio Draaidoor maakt bedrijfsvideo’s, veiligheidsfilms, interviews, podcasts en aftermovies voor bedrijven en organisaties. Professioneel, helder en direct inzetbaar."
+    "Studio Draaidoor maakt bedrijfsvideo’s, veiligheidsfilms, interviews, podcasts en aftermovies voor bedrijven en organisaties. Professioneel, helder en direct inzetbaar.",
+  alternates: {
+    canonical: "https://www.studiodraaidoor.nl/"
+  }
 };
 
 export default function HomePage() {

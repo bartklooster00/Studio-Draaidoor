@@ -31,7 +31,10 @@ export async function generateMetadata({
     title: {
       absolute: project.seoTitle
     },
-    description: project.seoDescription
+    description: project.seoDescription,
+    alternates: {
+      canonical: `/portfolio/${project.slug}`
+    }
   };
 }
 

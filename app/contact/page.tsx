@@ -11,7 +11,10 @@ export const metadata: Metadata = {
       "Contact | Bedrijfsvideo en videoproductie in Groningen | Studio Draaidoor"
   },
   description:
-    "Neem contact op met Studio Draaidoor voor een bedrijfsvideo, veiligheidsfilm, interviewvideo of andere videoproductie in Groningen en daarbuiten."
+    "Neem contact op met Studio Draaidoor voor een bedrijfsvideo, veiligheidsfilm, interviewvideo of andere videoproductie in Groningen en daarbuiten.",
+  alternates: {
+    canonical: "/contact"
+  }
 };
 
 export default function ContactPage() {
