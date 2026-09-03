@@ -46,5 +46,17 @@ export default async function PortfolioDetailPage({ params }: ProjectPageProps) 
     notFound();
   }
 
-  return <ProjectDetail project={project} />;
+  return (
+    <ProjectDetail
+      project={project}
+      relatedServiceLink={
+        project.slug === "eew-delfzijl-veiligheidsfilm"
+          ? {
+              href: "/veiligheidsvideo-laten-maken",
+              label: "Meer over veiligheidsvideo’s"
+            }
+          : undefined
+      }
+    />
+  );
 }

@@ -14,7 +14,9 @@ export const site = {
 };
 
 export const navigation = [
+  { label: "Diensten", href: "/diensten" },
   { label: "Portfolio", href: "/portfolio" },
+  { label: "Over", href: "/over" },
   { label: "Contact", href: "/contact" }
 ];
 

@@ -27,24 +27,60 @@ const proofLines = [
   "Voor bedrijven en organisaties"
 ];
 
-const services = [
+type HomeService = {
+  title: string;
+  image: string;
+  href: string;
+};
+
+const services: HomeService[] = [
   {
     title: "Bedrijfsvideo",
-    image: "/images/studio-draaidoor-production-setup.png"
+    image: "/images/studio-draaidoor-production-setup.png",
+    href: "/diensten#bedrijfsvideo"
   },
   {
     title: "Veiligheidsfilm",
-    image: portfolioProjects[0].posterSrc
+    image: portfolioProjects[0].posterSrc,
+    href: "/veiligheidsvideo-laten-maken"
   },
   {
     title: "Interview",
-    image: "/images/bart-drone-controller.jpg"
+    image: "/images/bart-drone-controller.jpg",
+    href: "/diensten#interview"
   },
   {
     title: "Aftermovie",
-    image: portfolioProjects[1].posterSrc
+    image: portfolioProjects[1].posterSrc,
+    href: "/diensten#aftermovie"
   }
 ];
+
+function ServiceVisual({ service }: { service: HomeService }) {
+  const className =
+    "group relative aspect-[16/10] overflow-hidden rounded-lg bg-[#050505] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
+  const content = (
+    <>
+      <Image
+        alt={`${service.title} visual`}
+        className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+        fill
+        sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
+        src={service.image}
+      />
+      <div className="absolute inset-0 bg-[#050505]/45 transition-colors duration-300 group-hover:bg-[#050505]/[0.38]" />
+      <h3 className="absolute bottom-6 left-7 m-0 text-[30px] font-bold leading-[1.05] text-white">
+        {service.title} →
+      </h3>
+    </>
+  );
+
+  return (
+    <Link className={className} href={service.href}>
+      {content}
+    </Link>
+  );
+}
 
 function PortfolioCase({
   isFeatured = false,
@@ -271,22 +307,7 @@ export function CinematicHomePrototype() {
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
             {services.map((service) => (
-              <article
-                className="group relative aspect-[16/10] overflow-hidden rounded-lg bg-[#050505]"
-                key={service.title}
-              >
-                <Image
-                  alt={`${service.title} visual`}
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
-                  fill
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
-                  src={service.image}
-                />
-                <div className="absolute inset-0 bg-[#050505]/45 transition-colors duration-300 group-hover:bg-[#050505]/[0.38]" />
-                <h3 className="absolute bottom-6 left-7 m-0 text-[30px] font-bold leading-[1.05] text-white">
-                  {service.title}
-                </h3>
-              </article>
+              <ServiceVisual key={service.title} service={service} />
             ))}
           </div>
         </Container>

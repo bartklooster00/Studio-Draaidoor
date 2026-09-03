@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/portfolio/basher-beatdown-promo` },
     { url: `${baseUrl}/portfolio/eew-qhse-lancering` },
     { url: `${baseUrl}/over` },
-    { url: `${baseUrl}/contact` }
+    { url: `${baseUrl}/contact` },
+    { url: `${baseUrl}/veiligheidsvideo-laten-maken` }
   ];
 }

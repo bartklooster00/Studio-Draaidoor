@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
 import { SectionIntro } from "@/components/SectionIntro";
@@ -22,6 +23,12 @@ export const metadata: Metadata = {
 };
 
 export default function DienstenPage() {
+  const serviceIds: Record<string, string> = {
+    Aftermovies: "aftermovie",
+    Interviews: "interview",
+    "Bedrijfsvideo’s": "bedrijfsvideo"
+  };
+
   return (
     <div className="page-offset bg-ink">
       <section className="section-space bg-ink">
@@ -35,7 +42,10 @@ export default function DienstenPage() {
           <StaggerContainer className="mt-10 grid gap-4">
             {services.map((service, index) => (
               <StaggerItem key={service.title}>
-                <article className="grid gap-5 rounded-lg border border-bone/10 bg-bone/[0.032] p-6 transition duration-300 hover:border-copper/35 md:grid-cols-[0.28fr_1fr] lg:p-7">
+                <article
+                  className="scroll-mt-28 grid gap-5 rounded-lg border border-bone/10 bg-bone/[0.032] p-6 transition duration-300 hover:border-copper/35 md:grid-cols-[0.28fr_1fr] lg:p-7"
+                  id={serviceIds[service.title]}
+                >
                   <div>
                     <p className="text-xs font-bold text-copper">
                       0{index + 1}
@@ -55,6 +65,26 @@ export default function DienstenPage() {
                 </article>
               </StaggerItem>
             ))}
+          </StaggerContainer>
+
+          <StaggerContainer className="mt-10 border-t border-bone/10 pt-8">
+            <StaggerItem className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+              <div>
+                <h2 className="text-2xl font-semibold text-bone">
+                  Veiligheidsvideo
+                </h2>
+                <p className="mt-3 max-w-[58ch] leading-7 text-bone/[0.66]">
+                  Voor poortinstructies, veiligheidsinstructies en toolboxen op
+                  locatie.
+                </p>
+              </div>
+              <ButtonLink
+                href="/veiligheidsvideo-laten-maken"
+                variant="secondary"
+              >
+                Meer over veiligheidsvideo’s
+              </ButtonLink>
+            </StaggerItem>
           </StaggerContainer>
         </Container>
       </section>

@@ -23,9 +23,16 @@ type Project = {
 
 type ProjectDetailProps = {
   project: Project;
+  relatedServiceLink?: {
+    href: string;
+    label: string;
+  };
 };
 
-export function ProjectDetail({ project }: ProjectDetailProps) {
+export function ProjectDetail({
+  project,
+  relatedServiceLink
+}: ProjectDetailProps) {
   const metadata = [
     ["Opdrachtgever", project.client],
     ["Type productie", project.productionType],
@@ -93,7 +100,15 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           </StaggerContainer>
 
           <StaggerContainer className="mt-8 border-t border-bone/10 pt-8">
-            <StaggerItem>
+            <StaggerItem className="flex flex-col gap-3 sm:flex-row">
+              {relatedServiceLink ? (
+                <ButtonLink
+                  href={relatedServiceLink.href}
+                  variant="secondary"
+                >
+                  {relatedServiceLink.label}
+                </ButtonLink>
+              ) : null}
               <ButtonLink href="/portfolio" variant="secondary">
                 Terug naar portfolio
               </ButtonLink>
