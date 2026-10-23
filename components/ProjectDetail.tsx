@@ -2,11 +2,6 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/Container";
 import { SectionIntro } from "@/components/SectionIntro";
 import { VideoEmbed } from "@/components/VideoEmbed";
-import {
-  FadeUp,
-  StaggerContainer,
-  StaggerItem
-} from "@/components/motion/MotionPrimitives";
 
 type Project = {
   title: string;
@@ -52,7 +47,7 @@ export function ProjectDetail({
             text={project.intro}
           />
 
-          <FadeUp className="mt-12 lg:mt-16">
+          <div className="mt-12 lg:mt-16">
             <div id="project-video">
               <VideoEmbed
                 loading="eager"
@@ -61,46 +56,40 @@ export function ProjectDetail({
                 videoUrl={project.videoUrl}
               />
             </div>
-          </FadeUp>
+          </div>
 
-          <StaggerContainer className="meta-copy mt-10 border-y border-bone/10 py-8">
+          <div className="meta-copy mt-10 border-y border-bone/10 py-8">
             <dl className="grid gap-6">
               {metadata.map(([label, value]) => (
-                <StaggerItem key={label}>
-                  <div className="grid gap-2 sm:grid-cols-[150px_1fr] sm:gap-6">
+                  <div className="grid gap-2 sm:grid-cols-[150px_1fr] sm:gap-6" key={label}>
                     <dt className="font-medium text-bone/[0.54]">{label}</dt>
                     <dd className="max-w-[68ch] text-bone/[0.8]">{value}</dd>
                   </div>
-                </StaggerItem>
               ))}
             </dl>
-          </StaggerContainer>
+          </div>
 
-          <StaggerContainer className="mt-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <div className="grid max-w-[68ch] gap-5">
               {project.longDescription.map((paragraph) => (
-                <StaggerItem key={paragraph}>
-                  <p className="body-copy text-bone/[0.72]">{paragraph}</p>
-                </StaggerItem>
+                <p className="body-copy text-bone/[0.72]" key={paragraph}>{paragraph}</p>
               ))}
-              <StaggerItem>
-                <h2 className="text-2xl font-bold leading-[1.2] text-bone">
-                  Ook iets in beeld brengen?
-                </h2>
-              </StaggerItem>
+              <h2 className="text-2xl font-bold leading-[1.2] text-bone">
+                Ook iets in beeld brengen?
+              </h2>
             </div>
-            <StaggerItem className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="#project-video">
                 Bekijk video
               </ButtonLink>
               <ButtonLink href="/contact" variant="secondary">
                 Bespreek je project
               </ButtonLink>
-            </StaggerItem>
-          </StaggerContainer>
+            </div>
+          </div>
 
-          <StaggerContainer className="mt-8 border-t border-bone/10 pt-8">
-            <StaggerItem className="flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 border-t border-bone/10 pt-8">
+            <div className="flex flex-col gap-3 sm:flex-row">
               {relatedServiceLink ? (
                 <ButtonLink
                   href={relatedServiceLink.href}
@@ -112,8 +101,8 @@ export function ProjectDetail({
               <ButtonLink href="/portfolio" variant="secondary">
                 Terug naar portfolio
               </ButtonLink>
-            </StaggerItem>
-          </StaggerContainer>
+            </div>
+          </div>
         </Container>
       </div>
     </section>

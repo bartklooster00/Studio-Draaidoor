@@ -1,8 +1,3 @@
-import {
-  StaggerContainer,
-  StaggerItem
-} from "@/components/motion/MotionPrimitives";
-
 type SectionIntroProps = {
   eyebrow?: string;
   title: string;
@@ -17,28 +12,24 @@ export function SectionIntro({
   headingLevel = "h2"
 }: SectionIntroProps) {
   const Heading = headingLevel;
+  const headingClass =
+    headingLevel === "h1" ? "type-section-large" : "type-section";
 
   return (
-    <StaggerContainer className="max-w-[780px]">
+    <div className="max-w-[780px]">
       {eyebrow ? (
-        <StaggerItem>
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.26em] text-copper">
-            {eyebrow}
-          </p>
-        </StaggerItem>
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-copper">
+          {eyebrow}
+        </p>
       ) : null}
-      <StaggerItem>
-        <Heading className="type-section max-w-[720px] text-bone">
-          {title}
-        </Heading>
-      </StaggerItem>
+      <Heading className={`${headingClass} max-w-[720px] text-bone`}>
+        {title}
+      </Heading>
       {text ? (
-        <StaggerItem>
-          <p className="body-copy mt-5 max-w-[68ch] text-bone/[0.72]">
-            {text}
-          </p>
-        </StaggerItem>
+        <p className="body-copy mt-6 max-w-[65ch] text-bone/[0.72]">
+          {text}
+        </p>
       ) : null}
-    </StaggerContainer>
+    </div>
   );
 }

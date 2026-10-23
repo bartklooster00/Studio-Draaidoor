@@ -3,11 +3,6 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/Container";
 import { SectionIntro } from "@/components/SectionIntro";
 import { VideoEmbed } from "@/components/VideoEmbed";
-import {
-  FadeUp,
-  StaggerContainer,
-  StaggerItem
-} from "@/components/motion/MotionPrimitives";
 import { portfolioProjects } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -157,8 +152,7 @@ export default function VeiligheidsvideoPage() {
             headingLevel="h1"
             title="Veiligheidsvideo laten maken"
           />
-          <StaggerContainer className="mt-7 max-w-[880px]">
-            <StaggerItem>
+          <div className="mt-7 max-w-[880px]">
               <p className="body-copy text-bone/[0.72]">
                 Een poortinstructie, veiligheidsinstructie of toolboxvideo moet
                 begrijpelijk zijn voor de mensen die ermee werken. Ik vertaal de
@@ -166,27 +160,22 @@ export default function VeiligheidsvideoPage() {
                 locatie. Daarbij combineer ik videoproductie met mijn ervaring als
                 veiligheidskundige.
               </p>
-            </StaggerItem>
-          </StaggerContainer>
-          <StaggerContainer className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <StaggerItem>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/contact">
                 Bespreek je veiligheidsvideo
               </ButtonLink>
-            </StaggerItem>
-            <StaggerItem>
               <ButtonLink
                 href="/portfolio/eew-delfzijl-veiligheidsfilm"
                 variant="secondary"
               >
                 Bekijk de EEW-case
               </ButtonLink>
-            </StaggerItem>
-          </StaggerContainer>
+          </div>
         </Container>
       </section>
 
-      <section className="bg-coal py-16 lg:py-20">
+      <section className="border-t border-white/[0.16] bg-ink py-16 lg:py-28">
         <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <h2 className="type-section max-w-[620px] text-bone">
             Maak duidelijk welke regels op jouw locatie gelden.
@@ -217,57 +206,50 @@ export default function VeiligheidsvideoPage() {
           <h2 className="type-section max-w-[720px] text-bone">
             Van poortinstructie tot toolboxvideo
           </h2>
-          <StaggerContainer className="mt-10 grid gap-8 md:grid-cols-3">
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
             {applications.map((application) => (
-              <StaggerItem
-                className="border-t border-bone/10 pt-6"
-                key={application.title}
-              >
+              <article key={application.title}>
                 <h3 className="text-2xl font-semibold text-bone">
                   {application.title}
                 </h3>
                 <p className="mt-4 leading-7 text-bone/[0.66]">
                   {application.text}
                 </p>
-              </StaggerItem>
+              </article>
             ))}
-          </StaggerContainer>
+          </div>
         </Container>
       </section>
 
-      <section className="section-space-compact bg-coal">
+      <section className="section-space border-t border-white/[0.16] bg-ink">
         <Container>
           <SectionIntro
             title="Van 35 tot 40 minuten naar circa 6,5 minuut"
             text="Voor EEW Delfzijl maakte ik een nieuwe poortinstructievideo voor medewerkers en bezoekers. De vorige instructiefilm duurde ongeveer 35 tot 40 minuten. De nieuwe video behandelt de belangrijkste informatie in circa 6,5 minuut."
           />
-          <FadeUp className="mt-10 lg:mt-12">
+          <div className="mt-10 lg:mt-12">
             <VideoEmbed
               loading="lazy"
               posterSrc={eewProject.posterSrc}
               title={eewProject.title}
               videoUrl={eewProject.videoUrl}
             />
-          </FadeUp>
-          <StaggerContainer className="mt-9 grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:gap-16">
+          </div>
+          <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:gap-16">
             <div className="grid max-w-[68ch] gap-5">
-              <StaggerItem>
                 <p className="body-copy text-bone/[0.72]">
                   EEW leverde de veiligheidsinhoud en het grootste deel van het
                   script aan. Ik dacht mee over de opbouw en verzorgde de opnames
                   op locatie, de montage en de oplevering.
                 </p>
-              </StaggerItem>
-              <StaggerItem>
                 <p className="body-copy text-bone/[0.72]">
                   De film is opgeleverd in het Nederlands, Engels en Duits. Zo kan
                   EEW dezelfde locatiegerichte informatie aan verschillende
                   doelgroepen laten zien.
                 </p>
-              </StaggerItem>
             </div>
-            <StaggerItem>
-              <ul className="grid gap-3 border-t border-bone/10 pt-5 text-bone/[0.76]">
+            <div>
+              <ul className="grid gap-3 text-bone/[0.76]">
                 <li>Film van circa 6,5 minuut</li>
                 <li>Voor bezoekers en medewerkers</li>
                 <li>Opgeleverd in drie talen</li>
@@ -278,8 +260,8 @@ export default function VeiligheidsvideoPage() {
                   Bekijk de EEW-case
                 </ButtonLink>
               </div>
-            </StaggerItem>
-          </StaggerContainer>
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -288,10 +270,10 @@ export default function VeiligheidsvideoPage() {
           <h2 className="type-section max-w-[720px] text-bone">
             Zo maken we een veiligheidsvideo.
           </h2>
-          <StaggerContainer className="mt-10 border-t border-bone/10">
+          <div className="mt-10 grid gap-12 md:gap-14">
             {productionSteps.map((step) => (
-              <StaggerItem
-                className="grid gap-4 border-b border-bone/10 py-7 md:grid-cols-[0.55fr_1fr] md:gap-8"
+              <article
+                className="grid gap-4 md:grid-cols-[0.55fr_1fr] md:gap-8"
                 key={step.title}
               >
                 <h3 className="text-2xl font-semibold text-bone">
@@ -304,13 +286,13 @@ export default function VeiligheidsvideoPage() {
                     </p>
                   ))}
                 </div>
-              </StaggerItem>
+              </article>
             ))}
-          </StaggerContainer>
+          </div>
         </Container>
       </section>
 
-      <section className="section-space-compact bg-coal">
+      <section className="section-space border-t border-white/[0.16] bg-ink">
         <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <h2 className="type-section max-w-[620px] text-bone">
             Videoproductie met kennis van veiligheid
@@ -340,25 +322,22 @@ export default function VeiligheidsvideoPage() {
           <h2 className="type-section max-w-[720px] text-bone">
             Veelgestelde vragen
           </h2>
-          <StaggerContainer className="mt-10 grid gap-x-12 gap-y-0 md:grid-cols-2">
+          <div className="mt-10 grid gap-x-12 gap-y-10 md:grid-cols-2">
             {frequentlyAskedQuestions.map((item) => (
-              <StaggerItem
-                className="border-t border-bone/10 py-7"
-                key={item.question}
-              >
+              <article key={item.question}>
                 <h3 className="text-xl font-semibold text-bone">
                   {item.question}
                 </h3>
                 <p className="mt-4 leading-7 text-bone/[0.66]">
                   {item.answer}
                 </p>
-              </StaggerItem>
+              </article>
             ))}
-          </StaggerContainer>
+          </div>
         </Container>
       </section>
 
-      <section className="border-y border-bone/10 bg-coal py-12 sm:py-14">
+      <section className="border-t border-white/[0.16] bg-ink py-16 sm:py-20">
         <Container className="grid gap-7 md:grid-cols-[1fr_auto] md:items-end">
           <div>
             <h2 className="text-3xl font-bold leading-[1.08] text-bone sm:text-4xl">

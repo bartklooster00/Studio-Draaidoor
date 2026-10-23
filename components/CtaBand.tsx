@@ -1,9 +1,5 @@
-import { ButtonLink } from "./ButtonLink";
+import Link from "next/link";
 import { Container } from "./Container";
-import {
-  StaggerContainer,
-  StaggerItem
-} from "@/components/motion/MotionPrimitives";
 
 type CtaBandProps = {
   eyebrow?: string;
@@ -17,29 +13,23 @@ export function CtaBand({
   buttonLabel = "Project bespreken"
 }: CtaBandProps) {
   return (
-    <section className="border-y border-black/10 bg-bone py-12 text-ink sm:py-14">
-      <Container className="grid gap-6 md:grid-cols-[1.4fr_auto] md:items-center">
+    <section className="border-t border-white/[0.16] bg-ink py-16 text-white sm:py-20">
+      <Container className="grid gap-8 md:grid-cols-[1.4fr_auto] md:items-end">
         <div>
-          <StaggerContainer>
-            <StaggerItem>
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-copper-dark">
-                {eyebrow}
-              </p>
-            </StaggerItem>
-            <StaggerItem>
-              <h2 className="mt-3 max-w-3xl text-3xl font-bold leading-[1.08] sm:text-4xl">
-                {title}
-              </h2>
-            </StaggerItem>
-          </StaggerContainer>
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-copper">
+            {eyebrow}
+          </p>
+          <h2 className="type-section mt-4 max-w-3xl text-white">{title}</h2>
         </div>
-        <StaggerContainer>
-          <StaggerItem>
-            <ButtonLink href="/contact" variant="dark">
-              {buttonLabel}
-            </ButtonLink>
-          </StaggerItem>
-        </StaggerContainer>
+        <Link
+          className="editorial-arrow-link inline-flex min-h-11 items-center gap-3 justify-self-start border-b border-white/40 text-lg font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:justify-self-end"
+          href="/contact"
+        >
+          {buttonLabel}
+          <span aria-hidden className="editorial-arrow">
+            →
+          </span>
+        </Link>
       </Container>
     </section>
   );

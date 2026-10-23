@@ -3,11 +3,6 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
 import { SectionIntro } from "@/components/SectionIntro";
-import {
-  StaggerContainer,
-  StaggerItem,
-  StaggerListItem
-} from "@/components/motion/MotionPrimitives";
 import { processSteps, services } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -38,36 +33,30 @@ export default function DienstenPage() {
             headingLevel="h1"
             text="Een bedrijfsvideo, interview, aftermovie of videopodcast vraagt telkens iets anders. Ik bespreek met je voor wie de film bedoeld is, verzorg de opnames en monteer voor het gebruik dat je voor ogen hebt."
           />
-          <StaggerContainer className="mt-10 grid gap-4">
-            {services.map((service, index) => (
-              <StaggerItem key={service.title}>
-                <article
-                  className="scroll-mt-28 grid gap-5 rounded-lg border border-bone/10 bg-bone/[0.032] p-6 transition duration-300 hover:border-copper/35 md:grid-cols-[0.28fr_1fr] lg:p-7"
-                  id={serviceIds[service.title]}
-                >
-                  <div>
-                    <p className="text-xs font-bold text-copper">
-                      0{index + 1}
-                    </p>
-                    <h2 className="mt-4 text-2xl font-semibold text-bone">
-                      {service.title}
-                    </h2>
-                  </div>
-                  <div>
-                    <p className="font-medium leading-7 text-bone">
-                      {service.description}
-                    </p>
-                    <p className="mt-4 leading-7 text-bone/[0.66]">
-                      {service.detail}
-                    </p>
-                  </div>
-                </article>
-              </StaggerItem>
+          <div className="mt-12 grid gap-14 md:gap-[88px]">
+            {services.map((service) => (
+              <article
+                className="scroll-mt-28 grid gap-4 md:grid-cols-[30fr_70fr] md:gap-12"
+                id={serviceIds[service.title]}
+                key={service.title}
+              >
+                <h2 className="text-[23px] font-semibold leading-tight text-bone md:text-[26px]">
+                  {service.title}
+                </h2>
+                <div className="max-w-[65ch]">
+                  <p className="text-lg font-medium leading-[1.5] text-bone">
+                    {service.description}
+                  </p>
+                  <p className="mt-3 text-base font-normal leading-[1.65] text-bone/[0.66] md:mt-4">
+                    {service.detail}
+                  </p>
+                </div>
+              </article>
             ))}
-          </StaggerContainer>
+          </div>
 
-          <StaggerContainer className="mt-10 border-t border-bone/10 pt-8">
-            <StaggerItem className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+          <div className="mt-20">
+            <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
               <div>
                 <h2 className="text-2xl font-semibold text-bone">
                   Veiligheids- en instructievideo’s
@@ -83,31 +72,28 @@ export default function DienstenPage() {
               >
                 Bekijk veiligheidsvideo’s
               </ButtonLink>
-            </StaggerItem>
-          </StaggerContainer>
+            </div>
+          </div>
         </Container>
       </section>
 
-      <section className="section-space-compact bg-coal">
-        <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <section className="section-space-compact border-t border-white/[0.16] bg-ink">
+        <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-16">
           <SectionIntro
             eyebrow="Werkwijze"
             title="Van eerste idee tot eindmontage"
             text="Je hoeft bij het eerste gesprek nog geen script klaar te hebben. We bespreken wat je wilt bereiken, bepalen wat daarvoor nodig is en werken van daaruit naar de opnames en montage."
           />
-          <StaggerContainer className="grid gap-3">
+          <ol className="grid gap-7">
             {processSteps.map((step, index) => (
-              <StaggerListItem
-                className="flex items-center gap-4 rounded-lg border border-bone/10 bg-bone/[0.03] px-5 py-4"
-                key={step}
-              >
-                <span className="grid size-9 shrink-0 place-items-center rounded-md border border-copper/25 bg-copper/[0.08] text-sm font-bold text-copper">
+              <li className="flex items-center gap-5" key={step}>
+                <span className="shrink-0 text-sm font-bold text-copper">
                   {index + 1}.
                 </span>
-                <span className="text-bone/[0.78]">{step}</span>
-              </StaggerListItem>
+                <span className="text-lg text-bone/[0.78]">{step}</span>
+              </li>
             ))}
-          </StaggerContainer>
+          </ol>
         </Container>
       </section>
 

@@ -63,13 +63,13 @@ section {
 }
 
 .type-section-large {
-  font-size: clamp(36px, 9vw, 40px);
+  font-size: clamp(2rem, 8.5vw, 3rem);
   font-weight: 700;
   line-height: 1.04;
 }
 
 .type-section {
-  font-size: clamp(34px, 8.5vw, 40px);
+  font-size: clamp(1.8rem, 7.5vw, 2.5rem);
   font-weight: 700;
   line-height: 1.05;
 }
@@ -99,6 +99,43 @@ section {
   height: clamp(680px, calc(100svh - var(--header-height)), 900px);
 }
 
+.editorial-media img {
+  transition: transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.editorial-media:hover img,
+.editorial-media:focus-visible img {
+  transform: scale(1.025);
+}
+
+.editorial-arrow {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.editorial-arrow-link:hover .editorial-arrow,
+.editorial-arrow-link:focus-visible .editorial-arrow {
+  transform: translateX(4px);
+}
+
+.editorial-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.editorial-reveal[data-reveal-ready="true"] {
+  opacity: 0.85;
+  transform: translateY(12px);
+}
+
+.editorial-reveal[data-reveal-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 440ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 440ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-hero-video {
     opacity: 0 !important;
@@ -106,6 +143,20 @@ section {
 
   .home-hero-poster {
     opacity: 1 !important;
+    transition: none;
+  }
+
+  .editorial-media img,
+  .editorial-media:hover img,
+  .editorial-media:focus-visible img,
+  .editorial-arrow,
+  .editorial-arrow-link:hover .editorial-arrow,
+  .editorial-arrow-link:focus-visible .editorial-arrow,
+  .editorial-reveal,
+  .editorial-reveal[data-reveal-ready="true"],
+  .editorial-reveal[data-reveal-visible="true"] {
+    opacity: 1;
+    transform: none;
     transition: none;
   }
 }
@@ -130,12 +181,12 @@ section {
   }
 
   .type-section-large {
-    font-size: clamp(46px, 4vw, 64px);
+    font-size: clamp(2.5rem, 4.2vw, 4.5rem);
     line-height: 1.02;
   }
 
   .type-section {
-    font-size: clamp(36px, 3vw, 52px);
+    font-size: clamp(1.8rem, 3vw, 3rem);
     line-height: 1.04;
   }
 

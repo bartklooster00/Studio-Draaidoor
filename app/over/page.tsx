@@ -3,11 +3,6 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { CtaBand } from "@/components/CtaBand";
 import { SectionIntro } from "@/components/SectionIntro";
-import {
-  FadeUp,
-  StaggerContainer,
-  StaggerItem
-} from "@/components/motion/MotionPrimitives";
 
 export const metadata: Metadata = {
   title: {
@@ -32,8 +27,7 @@ export default function OverPage() {
               headingLevel="h1"
               text="Studio DraaiDoor is een zelfstandig videoproductiebedrijf uit Groningen. Ik maak films voor bedrijven en organisaties, van interviews en projectfilms tot video’s voor interne communicatie."
             />
-            <FadeUp className="mt-8">
-              <div className="rounded-lg border border-bone/10 bg-bone/[0.035] p-6 lg:p-7">
+            <div className="mt-10 max-w-[65ch]">
                 <h2 className="text-2xl font-semibold text-bone">
                   Bart Klooster
                 </h2>
@@ -46,11 +40,10 @@ export default function OverPage() {
                   productie om extra mensen of apparatuur vraagt, stem ik dat met
                   je af en schakel ik mijn netwerk in.
                 </p>
-              </div>
-            </FadeUp>
+            </div>
           </div>
-          <FadeUp delay={0.08}>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-bone/10 lg:aspect-[5/6]">
+          <div>
+            <div className="relative aspect-[4/5] overflow-hidden lg:aspect-[5/6]">
               <Image
                 alt="Bart Klooster met dronecontroller in het veld"
                 className="object-cover object-[50%_35%] md:object-[50%_36%]"
@@ -59,13 +52,13 @@ export default function OverPage() {
                 src="/images/bart-drone-controller.jpg"
               />
             </div>
-          </FadeUp>
+          </div>
         </Container>
       </section>
 
-      <section className="section-space-compact bg-coal">
+      <section className="section-space-compact border-t border-white/[0.16] bg-ink">
         <Container>
-          <StaggerContainer className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-x-12 gap-y-10 md:grid-cols-2 md:gap-y-12">
           {[
             [
               "Eerst de opdracht",
@@ -84,16 +77,14 @@ export default function OverPage() {
               "Soms is één camera voldoende, soms zijn extra mensen of apparatuur nodig. We bespreken vooraf wat bij de opdracht past."
             ]
           ].map(([title, text]) => (
-            <StaggerItem key={title}>
-              <article className="flex h-full flex-col rounded-lg border border-bone/10 bg-bone/[0.035] p-6 transition duration-300 hover:border-copper/35">
+              <article key={title}>
                 <h3 className="text-xl font-semibold text-bone">{title}</h3>
-                <p className="mt-4 text-sm leading-6 text-bone/[0.62]">
+                <p className="mt-4 max-w-[65ch] leading-7 text-bone/[0.62]">
                   {text}
                 </p>
               </article>
-            </StaggerItem>
           ))}
-          </StaggerContainer>
+          </div>
         </Container>
       </section>
 

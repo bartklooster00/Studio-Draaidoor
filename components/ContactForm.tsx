@@ -6,10 +6,10 @@ import { useState } from "react";
 import { site } from "@/lib/site-data";
 
 const inputClass =
-  "min-h-12 rounded-md border border-bone/10 bg-ink/80 px-4 text-bone outline-none transition duration-300 placeholder:text-bone/[0.32] hover:border-bone/20 focus:border-copper/70 focus:bg-ink disabled:cursor-not-allowed disabled:opacity-60";
+  "min-h-12 rounded-md border border-bone/40 bg-ink/80 px-4 text-bone outline-none transition duration-300 placeholder:text-bone/[0.32] hover:border-bone/55 focus:border-copper/70 focus:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:cursor-not-allowed disabled:opacity-60";
 
 const textareaClass =
-  "min-h-36 rounded-md border border-bone/10 bg-ink/80 p-4 text-bone outline-none transition duration-300 placeholder:text-bone/[0.32] hover:border-bone/20 focus:border-copper/70 focus:bg-ink disabled:cursor-not-allowed disabled:opacity-60";
+  "min-h-36 rounded-md border border-bone/40 bg-ink/80 p-4 text-bone outline-none transition duration-300 placeholder:text-bone/[0.32] hover:border-bone/55 focus:border-copper/70 focus:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:cursor-not-allowed disabled:opacity-60";
 
 type FieldErrors = Partial<
   Record<"naam" | "email" | "bericht", string>
@@ -62,7 +62,7 @@ export function ContactForm() {
   if (state.succeeded) {
     return (
       <div
-        className="rounded-lg border border-copper/30 bg-bone/[0.035] p-6 sm:p-7"
+        className="border-t border-copper/30 pt-6"
         role="status"
       >
         <p className="text-lg font-semibold leading-7 text-bone">
@@ -75,7 +75,7 @@ export function ContactForm() {
 
   return (
     <form
-      className="rounded-lg border border-bone/10 bg-bone/[0.035] p-6 sm:p-7"
+      className="w-full"
       noValidate
       onSubmit={onSubmit}
     >

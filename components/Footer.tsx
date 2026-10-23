@@ -41,6 +41,14 @@ export function Footer() {
                 {site.email}
               </a>
             </p>
+            <p>
+              <a
+                className="transition-colors hover:text-white"
+                href={`tel:+31${site.phone.replace(/\D/g, "").slice(1)}`}
+              >
+                {site.phone}
+              </a>
+            </p>
             <p>{site.location}</p>
           </div>
         </div>

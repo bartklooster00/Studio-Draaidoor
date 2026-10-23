@@ -25,7 +25,7 @@ export const portfolioProjects = [
   {
     slug: "eew-delfzijl-veiligheidsfilm",
     href: "/portfolio/eew-delfzijl-veiligheidsfilm",
-    title: "EEW Delfzijl — veiligheidsfilm",
+    title: "Veiligheidsfilm voor EEW Delfzijl",
     client: "EEW Energy from Waste Delfzijl B.V.",
     category: "Veiligheidsfilm · Instructievideo · Poortinstructie",
     productionType: "Veiligheidsfilm en poortinstructie",
@@ -55,7 +55,7 @@ export const portfolioProjects = [
   {
     slug: "basher-beatdown-promo",
     href: "/portfolio/basher-beatdown-promo",
-    title: "Basher Beatdown — gamepromo",
+    title: "Promotievideo voor Basher Beatdown",
     client: "Crash Interactive",
     category: "Promo video · Game promo",
     productionType: "Promotievideo voor een game",
@@ -84,7 +84,7 @@ export const portfolioProjects = [
   {
     slug: "eew-qhse-lancering",
     href: "/portfolio/eew-qhse-lancering",
-    title: "EEW Delfzijl — QHSE-lancering",
+    title: "Kennismaken met QHSE bij EEW Delfzijl",
     client: "EEW Energy from Waste Delfzijl B.V.",
     category: "Lanceringsvideo · Interne communicatievideo",
     productionType: "Interne communicatievideo",

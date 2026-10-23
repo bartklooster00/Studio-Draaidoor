@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/Container";
+import { EditorialReveal } from "@/components/EditorialReveal";
 import { portfolioProjects } from "@/lib/site-data";
 
 const HERO_VIDEO_SRC = "/video/drone-achter-auto.mp4";
@@ -57,27 +58,26 @@ const services: HomeService[] = [
 ];
 
 function ServiceVisual({ service }: { service: HomeService }) {
-  const className =
-    "group relative aspect-[16/10] overflow-hidden rounded-lg bg-[#050505] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
-  const content = (
-    <>
+  return (
+    <Link
+      className="editorial-arrow-link group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+      href={service.href}
+    >
+      <div className="editorial-media relative aspect-[16/10] overflow-hidden bg-[#050505]">
       <Image
         alt={`${service.title} visual`}
-        className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+        className="object-cover object-center"
         fill
         sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
         src={service.image}
       />
-      <div className="absolute inset-0 bg-[#050505]/45 transition-colors duration-300 group-hover:bg-[#050505]/[0.38]" />
-      <h3 className="absolute bottom-6 left-7 m-0 text-[30px] font-bold leading-[1.05] text-white">
-        {service.title} →
+      </div>
+      <h3 className="mt-4 flex items-center justify-between gap-4 text-2xl font-bold leading-[1.1] text-white">
+        {service.title}
+        <span aria-hidden className="editorial-arrow shrink-0">
+          →
+        </span>
       </h3>
-    </>
-  );
-
-  return (
-    <Link className={className} href={service.href}>
-      {content}
     </Link>
   );
 }
@@ -89,40 +89,49 @@ function PortfolioCase({
   isFeatured?: boolean;
   project: (typeof portfolioProjects)[number];
 }) {
-  return (
-    <article
-      className={`group relative w-full overflow-hidden rounded-lg bg-[#050505] ${
-        isFeatured
-          ? "aspect-[4/5] sm:aspect-[16/8]"
-          : "aspect-[4/5] sm:aspect-video"
+  const media = (
+    <Link
+      aria-label={`Bekijk project: ${project.title}`}
+      className={`editorial-media relative block w-full overflow-hidden bg-[#050505] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white ${
+        isFeatured ? "aspect-[4/5] sm:aspect-[16/8]" : "aspect-[4/5] sm:aspect-video"
       }`}
+      href={project.href}
     >
       <Image
         alt={`${project.title} thumbnail`}
-        className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+        className="object-cover object-center"
         fill
         sizes={isFeatured ? "100vw" : "(min-width: 768px) 50vw, 100vw"}
         src={project.posterSrc}
       />
-      <div className="absolute inset-0 bg-[#050505]/50 transition-colors duration-300 group-hover:bg-[#050505]/[0.44]" />
-      <div className="absolute inset-0 flex max-w-[760px] items-end p-6 text-left sm:p-10">
-        <div>
-          <h3
-            className={
-              isFeatured
-                ? "m-0 text-[34px] font-bold leading-[1.05] text-white sm:text-[52px]"
-                : "m-0 text-[32px] font-bold leading-[1.05] text-white sm:text-[40px]"
-            }
-          >
-            {project.title}
-          </h3>
-          <p className="mt-4 max-w-[68ch] text-base leading-[1.55] text-[#F5F3EF]/[0.76] sm:text-lg">
-            {project.cardText}
-          </p>
-          <Link className={`${secondaryButton} mt-6`} href={project.href}>
-            Bekijk project
-          </Link>
-        </div>
+    </Link>
+  );
+
+  return (
+    <article className="w-full">
+      {isFeatured ? <EditorialReveal>{media}</EditorialReveal> : media}
+      <div className="mt-5 max-w-[760px] sm:mt-6">
+        <h3
+          className={
+            isFeatured
+              ? "m-0 text-[34px] font-bold leading-[1.08] text-white sm:text-[48px]"
+              : "m-0 text-[30px] font-bold leading-[1.08] text-white sm:text-[38px]"
+          }
+        >
+          {project.title}
+        </h3>
+        <p className="mt-4 max-w-[65ch] text-base leading-[1.6] text-[#F5F3EF]/[0.76] sm:text-lg">
+          {project.cardText}
+        </p>
+        <Link
+          className="editorial-arrow-link mt-5 inline-flex min-h-11 items-center gap-3 border-b border-white/40 font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          href={project.href}
+        >
+          Bekijk project
+          <span aria-hidden className="editorial-arrow">
+            →
+          </span>
+        </Link>
       </div>
     </article>
   );
@@ -218,17 +227,14 @@ export function CinematicHomePrototype() {
         </div>
       </section>
 
-      <section className="bg-[#050505] pb-8 pt-16 sm:pb-12 sm:pt-20 lg:pb-14 lg:pt-24">
+      <section className="bg-[#050505] py-16 sm:py-20 lg:py-28">
         <Container className="grid gap-12 min-[900px]:grid-cols-[58fr_34fr] min-[900px]:items-center min-[900px]:gap-[8%]">
           <h2 className="m-0 max-w-[880px] text-[34px] font-bold leading-[1.04] text-white sm:text-[38px] lg:text-[54px]">
             Eerst helder krijgen wat de video moet doen.
           </h2>
-          <div>
+          <div className="grid gap-7 md:gap-9">
             {statementLines.map((line) => (
-              <p
-                className="m-0 border-t border-white/[0.14] py-[22px] text-2xl font-bold leading-[1.2] text-white/[0.86]"
-                key={line}
-              >
+              <p className="m-0 text-left text-2xl font-bold leading-[1.2] text-white/[0.86]" key={line}>
                 {line}
               </p>
             ))}
@@ -236,38 +242,16 @@ export function CinematicHomePrototype() {
         </Container>
       </section>
 
-      <section className="bg-[#050505] py-8 sm:py-12 lg:py-14">
+      <section className="bg-[#050505] py-16 sm:py-20 lg:py-28">
         <Container className="grid gap-12 min-[1024px]:grid-cols-[55fr_45fr] min-[1024px]:items-start min-[1024px]:gap-[72px]">
-          <div>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
-              <Image
-                alt="Bart Klooster met dronecontroller in het veld"
-                className="object-cover object-[50%_20%]"
-                fill
-                sizes="(min-width: 1024px) 55vw, 100vw"
-                src="/images/bart-drone-controller.jpg"
-              />
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-4">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-lg">
-                <Image
-                  alt="Studio DraaiDoor productieset met camera en licht"
-                  className="object-cover object-center"
-                  fill
-                  sizes="(min-width: 1024px) 27vw, 50vw"
-                  src="/images/studio-draaidoor-production-setup.png"
-                />
-              </div>
-              <div className="relative aspect-[16/10] overflow-hidden rounded-lg">
-                <Image
-                  alt="Basher Beatdown projectbeeld"
-                  className="object-cover object-center"
-                  fill
-                  sizes="(min-width: 1024px) 27vw, 50vw"
-                  src={portfolioProjects[1].posterSrc}
-                />
-              </div>
-            </div>
+          <div className="relative aspect-[4/3] w-full overflow-hidden">
+            <Image
+              alt="Bart Klooster met dronecontroller in het veld"
+              className="object-cover object-[50%_20%]"
+              fill
+              sizes="(min-width: 1024px) 55vw, 100vw"
+              src="/images/bart-drone-controller.jpg"
+            />
           </div>
 
           <div>
@@ -294,7 +278,7 @@ export function CinematicHomePrototype() {
         </Container>
       </section>
 
-      <section className="bg-[#050505] py-8 sm:py-12 lg:py-14">
+      <section className="bg-[#050505] py-16 sm:py-20 lg:py-28">
         <Container className="grid gap-12 min-[1024px]:grid-cols-[38fr_62fr] min-[1024px]:items-start min-[1024px]:gap-[72px]">
           <div>
             <h2 className="type-section m-0 text-white">
@@ -307,7 +291,7 @@ export function CinematicHomePrototype() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:gap-y-12">
             {services.map((service) => (
               <ServiceVisual key={service.title} service={service} />
             ))}
@@ -315,7 +299,7 @@ export function CinematicHomePrototype() {
         </Container>
       </section>
 
-      <section className="bg-[#050505] pb-16 pt-8 sm:pb-20 sm:pt-12 lg:pb-24 lg:pt-14">
+      <section className="bg-[#050505] py-16 sm:py-20 lg:py-32">
         <Container>
           <div className="max-w-[760px]">
             <h2 className="m-0 max-w-[760px] text-[34px] font-bold leading-[1.04] text-white sm:text-[38px] lg:text-[54px]">
