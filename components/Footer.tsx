@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookieSettingsLink } from "@/components/CookieSettingsLink";
 import { navigation, site } from "@/lib/site-data";
 
 export function Footer() {
@@ -50,6 +51,9 @@ export function Footer() {
               </a>
             </p>
             <p>{site.location}</p>
+            <p>
+              <CookieSettingsLink />
+            </p>
           </div>
         </div>
       </div>

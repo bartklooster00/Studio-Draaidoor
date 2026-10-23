@@ -2,7 +2,11 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   createSuccessfulSubmissionTracker,
-  dispatchGenerateLead
+  dispatchGenerateLead,
+  flushPendingGenerateLeads,
+  setAnalyticsConsent,
+  setAnalyticsReady,
+  trackGenerateLead
 } from "../lib/lead-tracking.ts";
 
 test("tracks only a transition to a successful Formspree state", () => {
@@ -87,5 +91,44 @@ test("sends only generate_lead and the configured destination", () => {
     "oppref"
   ]) {
     assert.equal(payload.includes(personalField), false);
+  }
+});
+
+test("queues one successful lead while GA initializes and flushes it once", () => {
+  const previousWindow = Object.getOwnPropertyDescriptor(globalThis, "window");
+  const previousMeasurementId = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID;
+  const calls: unknown[][] = [];
+
+  Object.defineProperty(globalThis, "window", {
+    configurable: true,
+    value: {
+      gtag: (...args: unknown[]) => calls.push(args)
+    }
+  });
+  process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID = "G-TEST1234";
+
+  try {
+    setAnalyticsConsent("granted");
+    setAnalyticsReady(false);
+
+    assert.equal(trackGenerateLead(), true);
+    assert.equal(calls.length, 0, "the lead waits until analytics is ready");
+
+    setAnalyticsReady(true);
+    assert.equal(flushPendingGenerateLeads(), 1);
+    assert.equal(flushPendingGenerateLeads(), 0);
+    assert.deepEqual(calls, [
+      ["event", "generate_lead", { send_to: "G-TEST1234" }]
+    ]);
+  } finally {
+    setAnalyticsConsent("denied");
+    setAnalyticsReady(false);
+    process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID = previousMeasurementId;
+
+    if (previousWindow) {
+      Object.defineProperty(globalThis, "window", previousWindow);
+    } else {
+      Reflect.deleteProperty(globalThis, "window");
+    }
   }
 });

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
+import { AnalyticsConsent } from "@/components/AnalyticsConsent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { site } from "@/lib/site-data";
@@ -44,6 +45,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <AnalyticsConsent />
       </body>
     </html>
   );
