@@ -7,7 +7,7 @@ import { Container } from "@/components/Container";
 import { EditorialReveal } from "@/components/EditorialReveal";
 import { portfolioProjects } from "@/lib/site-data";
 
-const HERO_VIDEO_SRC = "/video/drone-achter-auto.mp4";
+const HERO_VIDEO_SRC = "/video/drone-achter-auto-720p.mp4";
 const HERO_POSTER = "/posters/hero-car.webp";
 
 const primaryButton =
@@ -139,8 +139,33 @@ function PortfolioCase({
 
 export function CinematicHomePrototype() {
   const [featuredProject, ...secondaryProjects] = portfolioProjects;
+  const [heroVideoEnabled, setHeroVideoEnabled] = useState(false);
   const [heroVideoReady, setHeroVideoReady] = useState(false);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let enableTimer: ReturnType<typeof setTimeout> | undefined;
+
+    const updateVideoPreference = () => {
+      if (reducedMotion.matches) {
+        if (enableTimer) clearTimeout(enableTimer);
+        setHeroVideoEnabled(false);
+        setHeroVideoReady(false);
+        return;
+      }
+
+      enableTimer = setTimeout(() => setHeroVideoEnabled(true), 150);
+    };
+
+    updateVideoPreference();
+    reducedMotion.addEventListener("change", updateVideoPreference);
+
+    return () => {
+      if (enableTimer) clearTimeout(enableTimer);
+      reducedMotion.removeEventListener("change", updateVideoPreference);
+    };
+  }, []);
 
   useEffect(() => {
     const video = heroVideoRef.current;
@@ -170,7 +195,7 @@ export function CinematicHomePrototype() {
       video.removeEventListener("playing", markReady);
       video.removeEventListener("timeupdate", markReady);
     };
-  }, []);
+  }, [heroVideoEnabled]);
 
   return (
     <div className="relative bg-[#050505] font-sans text-[#F5F3EF]">
@@ -188,19 +213,21 @@ export function CinematicHomePrototype() {
           src={HERO_POSTER}
           unoptimized
         />
-        <video
-          autoPlay
-          className={`home-hero-video absolute inset-0 h-full w-full object-cover object-[68%_center] transition-opacity duration-[180ms] ${
-            heroVideoReady ? "opacity-100" : "opacity-0"
-          }`}
-          loop
-          muted
-          playsInline
-          poster={HERO_POSTER}
-          preload="auto"
-          ref={heroVideoRef}
-          src={HERO_VIDEO_SRC}
-        />
+        {heroVideoEnabled ? (
+          <video
+            autoPlay
+            className={`home-hero-video absolute inset-0 h-full w-full object-cover object-[68%_center] transition-opacity duration-[180ms] ${
+              heroVideoReady ? "opacity-100" : "opacity-0"
+            }`}
+            loop
+            muted
+            playsInline
+            poster={HERO_POSTER}
+            preload="metadata"
+            ref={heroVideoRef}
+            src={HERO_VIDEO_SRC}
+          />
+        ) : null}
         <div className="pointer-events-none absolute inset-0 bg-[#050505]/40" />
 
         <div className="relative flex h-full items-center pb-[4vh] pt-[var(--header-height)]">
