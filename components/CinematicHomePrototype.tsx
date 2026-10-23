@@ -273,11 +273,12 @@ export function CinematicHomePrototype() {
         <Container className="grid gap-12 min-[1024px]:grid-cols-[55fr_45fr] min-[1024px]:items-start min-[1024px]:gap-[72px]">
           <div className="relative aspect-[4/3] w-full overflow-hidden">
             <Image
-              alt="Bart Klooster met dronecontroller in het veld"
-              className="object-cover object-[50%_20%]"
+              alt="Bart Klooster buiten"
+              className="object-cover object-[50%_32%]"
               fill
+              quality={95}
               sizes="(min-width: 1024px) 55vw, 100vw"
-              src="/images/bart-drone-controller.jpg"
+              src="/images/bart-portret-2026.webp"
             />
           </div>
 

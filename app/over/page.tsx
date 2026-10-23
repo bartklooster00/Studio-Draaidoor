@@ -45,11 +45,12 @@ export default function OverPage() {
           <div>
             <div className="relative aspect-[4/5] overflow-hidden lg:aspect-[5/6]">
               <Image
-                alt="Bart Klooster met dronecontroller in het veld"
-                className="object-cover object-[50%_35%] md:object-[50%_36%]"
+                alt="Bart Klooster buiten"
+                className="object-cover object-[50%_32%]"
                 fill
+                quality={95}
                 sizes="(min-width: 1024px) 45vw, 100vw"
-                src="/images/bart-drone-controller.jpg"
+                src="/images/bart-portret-2026.webp"
               />
             </div>
           </div>
