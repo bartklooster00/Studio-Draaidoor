@@ -2,7 +2,11 @@
 
 import { useForm } from "@formspree/react";
 import type { FormEvent } from "react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import {
+  createSuccessfulSubmissionTracker,
+  trackGenerateLead
+} from "@/lib/lead-tracking";
 import { site } from "@/lib/site-data";
 
 const inputClass =
@@ -44,8 +48,15 @@ function getFormErrors(form: HTMLFormElement): FieldErrors {
 export function ContactForm() {
   const [state, handleSubmit] = useForm("xvzlavbz");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const successTracker = useRef(
+    createSuccessfulSubmissionTracker(trackGenerateLead)
+  );
   const isDisabled = state.submitting || state.succeeded;
   const hasFormspreeError = Boolean(state.errors);
+
+  useEffect(() => {
+    successTracker.current(state.succeeded);
+  }, [state.succeeded]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
