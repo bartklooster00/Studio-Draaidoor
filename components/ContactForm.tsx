@@ -25,17 +25,17 @@ function getFormErrors(form: HTMLFormElement): FieldErrors {
   const errors: FieldErrors = {};
 
   if (!naam) {
-    errors.naam = "Vul uw naam in.";
+    errors.naam = "Vul je naam in.";
   }
 
   if (!email) {
-    errors.email = "Vul uw e-mailadres in.";
+    errors.email = "Vul je e-mailadres in.";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     errors.email = "Vul een geldig e-mailadres in.";
   }
 
   if (!bericht) {
-    errors.bericht = "Vul kort in waar het videoproject over gaat.";
+    errors.bericht = "Vertel kort wat je voor ogen hebt.";
   }
 
   return errors;
@@ -66,8 +66,8 @@ export function ContactForm() {
         role="status"
       >
         <p className="text-lg font-semibold leading-7 text-bone">
-          Bedankt, uw bericht is verzonden. Ik neem zo snel mogelijk contact met
-          u op.
+          Bedankt voor je bericht. Het is verzonden. Ik neem zo snel mogelijk
+          contact met je op.
         </p>
       </div>
     );
@@ -88,7 +88,7 @@ export function ContactForm() {
             aria-describedby={fieldErrors.naam ? "naam-error" : undefined}
             aria-invalid={Boolean(fieldErrors.naam)}
             name="naam"
-            placeholder="Naam"
+            placeholder="Je naam"
             type="text"
           />
           {fieldErrors.naam ? (
@@ -98,12 +98,12 @@ export function ContactForm() {
           ) : null}
         </label>
         <label className="grid gap-2 text-sm font-medium text-bone/75">
-          Bedrijf
+          Bedrijf (optioneel)
           <input
             className={inputClass}
             disabled={isDisabled}
             name="bedrijf"
-            placeholder="Bedrijfsnaam"
+            placeholder="Naam van je bedrijf"
             type="text"
           />
         </label>
@@ -128,12 +128,12 @@ export function ContactForm() {
           ) : null}
         </label>
         <label className="grid gap-2 text-sm font-medium text-bone/75">
-          Telefoonnummer
+          Telefoonnummer (optioneel)
           <input
             className={inputClass}
             disabled={isDisabled}
             name="telefoonnummer"
-            placeholder="Telefoonnummer"
+            placeholder="Je telefoonnummer"
             type="tel"
           />
         </label>
@@ -147,7 +147,7 @@ export function ContactForm() {
           aria-describedby={fieldErrors.bericht ? "bericht-error" : undefined}
           aria-invalid={Boolean(fieldErrors.bericht)}
           name="bericht"
-          placeholder="Vertel kort waar het videoproject over gaat."
+          placeholder="Wat wil je laten maken? Een paar zinnen is genoeg."
         />
         {fieldErrors.bericht ? (
           <span className={errorClass} id="bericht-error">
@@ -161,8 +161,7 @@ export function ContactForm() {
           className="mt-4 rounded-md border border-bone/10 bg-bone/[0.03] px-4 py-3 text-sm leading-6 text-bone/75"
           role="alert"
         >
-          Er ging iets mis bij het verzenden. Probeer het opnieuw of stuur een
-          e-mail naar {site.email}.
+          Versturen is niet gelukt. Probeer het opnieuw of mail naar {site.email}.
         </p>
       ) : null}
 
@@ -171,7 +170,7 @@ export function ContactForm() {
         disabled={isDisabled}
         type="submit"
       >
-        {state.submitting ? "Versturen..." : "Versturen"}
+        {state.submitting ? "Bezig met versturen..." : "Verstuur je bericht"}
       </button>
     </form>
   );

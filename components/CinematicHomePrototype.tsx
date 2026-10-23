@@ -15,16 +15,16 @@ const secondaryButton =
   "inline-flex h-14 w-full items-center justify-center whitespace-nowrap rounded-lg border border-white/[0.28] bg-transparent px-8 text-lg font-bold text-white transition-colors hover:border-white/[0.42] hover:bg-white/[0.06] sm:w-auto";
 
 const statementLines = [
-  "Vooraf helder plan.",
-  "Op locatie rustig werken.",
-  "Montage zonder omwegen."
+  "Voor wie maken we de video?",
+  "Welke beelden laten dat zien?",
+  "Waar wordt de film voor gebruikt?"
 ];
 
 const proofLines = [
-  "Regie, camera en montage",
-  "Bedrijfsvideo en veiligheidsfilm",
-  "Interviews, podcasts en aftermovies",
-  "Voor bedrijven en organisaties"
+  "Inhoud en voorbereiding",
+  "Camerawerk op locatie",
+  "Montage en nabewerking",
+  "Eén vast aanspreekpunt"
 ];
 
 type HomeService = {
@@ -40,13 +40,13 @@ const services: HomeService[] = [
     href: "/diensten#bedrijfsvideo"
   },
   {
-    title: "Veiligheidsfilm",
+    title: "Veiligheidsvideo",
     image: portfolioProjects[0].posterSrc,
     href: "/veiligheidsvideo-laten-maken"
   },
   {
     title: "Interview",
-    image: "/images/bart-drone-controller.jpg",
+    image: "/posters/eew-qhse-lancering.webp",
     href: "/diensten#interview"
   },
   {
@@ -198,18 +198,19 @@ export function CinematicHomePrototype() {
           <Container>
             <div className="w-full max-w-[780px] min-[900px]:w-[52vw]">
               <h1 className="type-hero m-0 max-w-[780px] text-white">
-                Bedrijfsvideo’s die helder maken wat u doet
+                Goed werk verdient het om gezien te worden.
               </h1>
               <p className="mt-7 max-w-[62ch] text-lg leading-[1.6] text-[#F5F3EF]/[0.78] sm:text-xl lg:text-2xl">
-                Video’s voor industrie, veiligheid en events. Duidelijk
-                voorbereid, rustig gedraaid en klaar voor gebruik.
+                Ik maak bedrijfsvideo’s, interviews en projectfilms over de mensen
+                en het werk achter een organisatie. We bepalen samen wat de film
+                moet overbrengen; ik verzorg de opnames en montage.
               </p>
               <div className="mt-11 flex flex-col gap-4 sm:flex-row">
                 <Link className={primaryButton} href="/portfolio">
-                  Bekijk portfolio
+                  Bekijk mijn werk
                 </Link>
                 <Link className={secondaryButton} href="/contact">
-                  Project bespreken
+                  Bespreek je project
                 </Link>
               </div>
             </div>
@@ -220,8 +221,7 @@ export function CinematicHomePrototype() {
       <section className="bg-[#050505] pb-8 pt-16 sm:pb-12 sm:pt-20 lg:pb-14 lg:pt-24">
         <Container className="grid gap-12 min-[900px]:grid-cols-[58fr_34fr] min-[900px]:items-center min-[900px]:gap-[8%]">
           <h2 className="m-0 max-w-[880px] text-[34px] font-bold leading-[1.04] text-white sm:text-[38px] lg:text-[54px]">
-            Geen groot bureauverhaal. Wel een video die uitlegt wat er moet
-            gebeuren.
+            Eerst helder krijgen wat de video moet doen.
           </h2>
           <div>
             {statementLines.map((line) => (
@@ -251,7 +251,7 @@ export function CinematicHomePrototype() {
             <div className="mt-4 grid grid-cols-2 gap-4">
               <div className="relative aspect-[16/10] overflow-hidden rounded-lg">
                 <Image
-                  alt="Studio Draaidoor productieset met camera en licht"
+                  alt="Studio DraaiDoor productieset met camera en licht"
                   className="object-cover object-center"
                   fill
                   sizes="(min-width: 1024px) 27vw, 50vw"
@@ -272,12 +272,13 @@ export function CinematicHomePrototype() {
 
           <div>
             <h2 className="type-section m-0 max-w-[680px] text-white">
-              Praktisch gedraaid. Professioneel opgeleverd.
+              Je hebt direct contact met de maker.
             </h2>
             <p className="body-copy mt-7 max-w-[68ch] text-[#F5F3EF]/[0.76]">
-              Ik maak videoproducties voor bedrijven die duidelijk willen laten
-              zien wat ze doen. Geen groot bureauverhaal, maar een praktische
-              aanpak met aandacht voor voorbereiding, beeld en oplevering.
+              Ik ben Bart Klooster, oprichter van Studio DraaiDoor. Ik denk mee
+              over de inhoud, film op locatie en verzorg de montage. Heeft een
+              productie extra mensen of apparatuur nodig, dan bespreken we dat
+              vooraf.
             </p>
             <div className="mt-9 grid gap-3">
               {proofLines.map((line) => (
@@ -297,11 +298,12 @@ export function CinematicHomePrototype() {
         <Container className="grid gap-12 min-[1024px]:grid-cols-[38fr_62fr] min-[1024px]:items-start min-[1024px]:gap-[72px]">
           <div>
             <h2 className="type-section m-0 text-white">
-              Video’s voor duidelijke communicatie.
+              Wat wil je in beeld brengen?
             </h2>
             <p className="body-copy mt-6 max-w-[48ch] text-[#F5F3EF]/[0.72]">
-              Voor websites, interne communicatie, veiligheid, events en
-              campagnes.
+              De ene video introduceert je bedrijf, de andere laat een project of
+              een evenement zien. We kiezen de beelden en vorm die passen bij wat
+              je wilt vertellen.
             </p>
           </div>
 
@@ -317,11 +319,12 @@ export function CinematicHomePrototype() {
         <Container>
           <div className="max-w-[760px]">
             <h2 className="m-0 max-w-[760px] text-[34px] font-bold leading-[1.04] text-white sm:text-[38px] lg:text-[54px]">
-              Videoprojecten voor bedrijven.
+              Bekijk het werk.
             </h2>
             <p className="body-copy mt-6 max-w-[68ch] text-[#F5F3EF]/[0.72]">
-              Een selectie van bedrijfsfilms, veiligheidsvideo’s, promo’s en
-              interne communicatievideo’s.
+              Hier zie je films die ik maakte voor EEW Delfzijl en Crash
+              Interactive, met verschillende doelen en een eigen aanpak per
+              productie.
             </p>
           </div>
 

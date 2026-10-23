@@ -12,10 +12,10 @@ import { portfolioProjects } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Veiligheidsvideo laten maken | Studio Draaidoor"
+    absolute: "Veiligheidsvideo laten maken | Studio DraaiDoor"
   },
   description:
-    "Laat veiligheidsregels en poortinstructies vertalen naar een heldere video voor medewerkers, contractors en bezoekers. Actief door heel Nederland.",
+    "Poortinstructies, veiligheidsinstructies en toolboxvideo’s voor bedrijven. Videoproductie met kennis van de praktijk.",
   alternates: {
     canonical: "https://www.studiodraaidoor.nl/veiligheidsvideo-laten-maken"
   }
@@ -24,15 +24,15 @@ export const metadata: Metadata = {
 const applications = [
   {
     title: "Poortinstructievideo",
-    text: "Voor bezoekers, contractors, chauffeurs en tijdelijke medewerkers. De video maakt hen vóór of bij aankomst bekend met uw locatie, veiligheidsregels en belangrijkste risico’s."
+    text: "Voor bezoekers, contractors, chauffeurs en tijdelijke medewerkers. Laat vooraf zien welke regels gelden en wat zij op jouw locatie kunnen verwachten."
   },
   {
     title: "Veiligheidsinstructievideo",
-    text: "Voor het uitleggen van een specifieke werkzaamheid, machine, procedure of veiligheidsmaatregel. De kijker ziet wat er wordt verwacht én hoe de situatie er in de praktijk uitziet."
+    text: "Laat bij een specifieke werkzaamheid, machine of procedure zien welke stappen en veiligheidsmaatregelen van belang zijn."
   },
   {
     title: "Toolboxvideo",
-    text: "Een korte video over één veiligheidsonderwerp. Geschikt voor een toolboxmeeting, interne campagne of terugkerende instructie."
+    text: "Een korte video rond één veiligheidsonderwerp, bedoeld voor een toolboxmeeting of andere terugkerende instructie."
   }
 ];
 
@@ -40,26 +40,26 @@ const productionSteps = [
   {
     title: "Inhoud en doelgroep",
     paragraphs: [
-      "U levert de bestaande informatie aan, bijvoorbeeld als presentatie, procedure, script of huidige instructievideo. Samen bepalen we wie de video gaat bekijken, wat diegene moet weten en waar de video wordt gebruikt."
+      "Je levert de bestaande informatie aan, bijvoorbeeld als presentatie, procedure of script. We bespreken wie de video gaat zien, wat diegene moet weten en waar de film wordt gebruikt."
     ]
   },
   {
-    title: "Vertaling naar beeld",
+    title: "Van tekst naar beeld",
     paragraphs: [
-      "Ik help de informatie terug te brengen tot een logische video-opbouw. Wat moet worden verteld? Wat kunnen we beter laten zien? En welke locaties, werkzaamheden of medewerkers zijn nodig voor de opnames?",
-      "Uw organisatie controleert en accordeert de veiligheidsinhoud voordat we gaan filmen."
+      "We bepalen welke informatie in beeld kan worden getoond en welke uitleg nodig blijft. Ook kijken we welke plekken, werkzaamheden en mensen belangrijk zijn voor de opnames.",
+      "Je organisatie beoordeelt en accordeert de veiligheidsinhoud voordat de opnames beginnen."
     ]
   },
   {
     title: "Opnames op locatie",
     paragraphs: [
-      "Ik verzorg de opnames met aandacht voor de dagelijkse werkzaamheden en regels op uw terrein. Vraagt de productie om extra mensen of specialistische kennis? Dan kan ik hiervoor mijn netwerk inschakelen, terwijl u één aanspreekpunt houdt."
+      "Ik film op de plek waar de instructie van toepassing is, met aandacht voor de werkzaamheden en de regels die daar gelden. Als de productie daarom vraagt, schakel ik extra mensen of apparatuur in."
     ]
   },
   {
     title: "Montage en oplevering",
     paragraphs: [
-      "Na de opnames verzorg ik de montage en eventuele ondertiteling, grafische uitleg en voice-over. De video kan in de benodigde talen en formaten worden opgeleverd voor uw website, interne omgeving, toegangssysteem of presentatie."
+      "Na de opnames monteer ik de film. Waar nodig voegen we ondertiteling, voice-over of grafische uitleg toe en maken we versies voor verschillende talen of toepassingen."
     ]
   }
 ];
@@ -68,22 +68,22 @@ const frequentlyAskedQuestions = [
   {
     question: "Wat kost een veiligheidsvideo?",
     answer:
-      "De prijs hangt af van de voorbereiding, lengte, opnamedagen, montage en gewenste taalversies. Na een eerste gesprek ontvangt u een voorstel op basis van de productie die bij uw situatie past."
+      "Dat hangt af van de inhoud, opnamedagen, lengte, montage en eventuele taalversies. Na een gesprek kan ik een voorstel maken dat bij jouw opdracht past."
   },
   {
-    question: "Kunnen bestaande instructies als basis worden gebruikt?",
+    question: "Kunnen we bestaande instructies gebruiken?",
     answer:
-      "Ja. Een bestaande presentatie, procedure, video of script vormt vaak een goed uitgangspunt. Ik help de informatie te ordenen en te vertalen naar beeld."
+      "Ja. Een bestaande presentatie, procedure, instructiefilm of script is vaak een goed vertrekpunt. We bekijken samen hoe we die informatie het beste naar video vertalen."
   },
   {
-    question: "Kan de video in meerdere talen worden opgeleverd?",
+    question: "Kan de video in meerdere talen?",
     answer:
-      "Ja. Vanuit dezelfde productie kunnen versies met ondertiteling of een professionele voice-over in de benodigde talen worden gemaakt."
+      "Ja. We kunnen bijvoorbeeld werken met ondertiteling of een voice-over, afhankelijk van de doelgroep en de toepassing."
   },
   {
     question: "Kan de video later worden aangepast?",
     answer:
-      "Dat hangt af van de wijziging. Tekst, ondertiteling en voice-over zijn vaak aan te passen zonder nieuwe opnames. Veranderen de locatie, werkzaamheden of praktijksituaties, dan kunnen aanvullende opnames nodig zijn."
+      "Vaak wel. Tekst, ondertiteling en voice-over zijn meestal aan te passen zonder nieuwe opnames. Als een locatie of werkwijze verandert, kunnen aanvullende beelden nodig zijn."
   }
 ];
 
@@ -95,7 +95,7 @@ const serviceStructuredData = {
     "productie van veiligheidsvideo’s, poortinstructievideo’s en toolboxvideo’s",
   provider: {
     "@type": "Organization",
-    name: "Studio Draaidoor",
+    name: "Studio DraaiDoor",
     url: "https://www.studiodraaidoor.nl"
   },
   areaServed: {
@@ -155,24 +155,23 @@ export default function VeiligheidsvideoPage() {
         <Container>
           <SectionIntro
             headingLevel="h1"
-            title="Veiligheidsvideo laten maken voor industrie"
+            title="Veiligheidsvideo laten maken"
           />
           <StaggerContainer className="mt-7 max-w-[880px]">
             <StaggerItem>
               <p className="body-copy text-bone/[0.72]">
-                Studio Draaidoor vertaalt bestaande veiligheidsinformatie naar
-                een professionele video voor medewerkers, contractors en
-                bezoekers. Ik denk mee over de opbouw en verzorg de opnames,
-                montage, taalversies en oplevering. Omdat ik daarnaast in de
-                veiligheidskunde werk, begrijp ik ook de omgeving waarin de
-                video wordt gebruikt.
+                Een poortinstructie, veiligheidsinstructie of toolboxvideo moet
+                begrijpelijk zijn voor de mensen die ermee werken. Ik vertaal de
+                aangeleverde veiligheidsinformatie naar beelden van de eigen
+                locatie. Daarbij combineer ik videoproductie met mijn ervaring als
+                veiligheidskundige.
               </p>
             </StaggerItem>
           </StaggerContainer>
           <StaggerContainer className="mt-8 flex flex-col gap-3 sm:flex-row">
             <StaggerItem>
               <ButtonLink href="/contact">
-                Bespreek uw veiligheidsvideo
+                Bespreek je veiligheidsvideo
               </ButtonLink>
             </StaggerItem>
             <StaggerItem>
@@ -190,26 +189,24 @@ export default function VeiligheidsvideoPage() {
       <section className="bg-coal py-16 lg:py-20">
         <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <h2 className="type-section max-w-[620px] text-bone">
-            Dezelfde veiligheidsinformatie voor iedere kijker
+            Maak duidelijk welke regels op jouw locatie gelden.
           </h2>
           <div className="grid max-w-[68ch] gap-5">
             <p className="body-copy text-bone/[0.72]">
-              Veiligheidsinformatie staat vaak verspreid over presentaties,
-              documenten en procedures. Een deel wordt mondeling toegelicht.
-              Dat kost iedere keer opnieuw tijd en maakt het lastig om
-              medewerkers en bezoekers op dezelfde manier te informeren.
+              Op locaties waar mensen werken of op bezoek komen, moet
+              veiligheidsinformatie begrijpelijk zijn. Toch staat die informatie
+              vaak verspreid over procedures, presentaties en mondelinge uitleg.
             </p>
             <p className="body-copy text-bone/[0.72]">
-              Een veiligheidsvideo brengt die informatie samen. U kunt op de
-              werkelijke locatie laten zien welke regels gelden, waar risico’s
-              aanwezig zijn, welke PBM verplicht zijn en wat iemand bij een
-              incident moet doen.
+              Met video kun je de situatie laten zien. Waar lopen mensen, welke
+              regels gelden er en wat moet iemand weten voordat hij het terrein
+              opgaat? Door de eigen locatie te filmen, wordt de uitleg herkenbaar.
             </p>
             <p className="body-copy text-bone/[0.72]">
-              De video kan vooraf worden toegestuurd, bij de toegang worden
-              vertoond of worden gebruikt tijdens onboarding en interne
-              instructies. Zo beschikt uw organisatie over één duidelijke basis
-              die steeds opnieuw kan worden ingezet.
+              Een veiligheidsvideo kun je vooraf toesturen, tijdens een
+              poortinstructie tonen of gebruiken bij onboarding. De
+              veiligheidsinhoud blijft bij jouw organisatie; ik help om die helder
+              in beeld te brengen.
             </p>
           </div>
         </Container>
@@ -241,8 +238,8 @@ export default function VeiligheidsvideoPage() {
       <section className="section-space-compact bg-coal">
         <Container>
           <SectionIntro
-            title="Van 35 minuten instructie naar 6,5 minuut video"
-            text="Voor EEW Energy from Waste Delfzijl maakte ik een nieuwe veiligheidsfilm voor medewerkers en bezoekers. De bestaande instructievideo duurde ongeveer 35 tot 40 minuten. De nieuwe video brengt de belangrijkste informatie in ongeveer 6,5 minuut over."
+            title="Van 35 tot 40 minuten naar circa 6,5 minuut"
+            text="Voor EEW Delfzijl maakte ik een nieuwe poortinstructievideo voor medewerkers en bezoekers. De vorige instructiefilm duurde ongeveer 35 tot 40 minuten. De nieuwe video behandelt de belangrijkste informatie in circa 6,5 minuut."
           />
           <FadeUp className="mt-10 lg:mt-12">
             <VideoEmbed
@@ -257,25 +254,24 @@ export default function VeiligheidsvideoPage() {
               <StaggerItem>
                 <p className="body-copy text-bone/[0.72]">
                   EEW leverde de veiligheidsinhoud en het grootste deel van het
-                  script aan. Ik dacht mee over de opbouw en vertaling naar
-                  beeld en verzorgde vervolgens de opnames, montage en volledige
-                  oplevering.
+                  script aan. Ik dacht mee over de opbouw en verzorgde de opnames
+                  op locatie, de montage en de oplevering.
                 </p>
               </StaggerItem>
               <StaggerItem>
                 <p className="body-copy text-bone/[0.72]">
-                  De veiligheidsfilm werd uitgevoerd in het Nederlands, Engels
-                  en Duits. Vanuit één productie kan EEW daardoor verschillende
-                  doelgroepen dezelfde locatiegerichte uitleg geven.
+                  De film is opgeleverd in het Nederlands, Engels en Duits. Zo kan
+                  EEW dezelfde locatiegerichte informatie aan verschillende
+                  doelgroepen laten zien.
                 </p>
               </StaggerItem>
             </div>
             <StaggerItem>
               <ul className="grid gap-3 border-t border-bone/10 pt-5 text-bone/[0.76]">
-                <li>Veiligheidsfilm van circa 6,5 minuut</li>
-                <li>Voor medewerkers en bezoekers</li>
+                <li>Film van circa 6,5 minuut</li>
+                <li>Voor bezoekers en medewerkers</li>
                 <li>Opgeleverd in drie talen</li>
-                <li>Opnames, montage en oplevering door Studio Draaidoor</li>
+                <li>Gefilmd en gemonteerd voor EEW Delfzijl</li>
               </ul>
               <div className="mt-7">
                 <ButtonLink href="/portfolio/eew-delfzijl-veiligheidsfilm">
@@ -290,7 +286,7 @@ export default function VeiligheidsvideoPage() {
       <section className="section-space bg-ink">
         <Container>
           <h2 className="type-section max-w-[720px] text-bone">
-            Zo komt uw veiligheidsvideo tot stand
+            Zo maken we een veiligheidsvideo.
           </h2>
           <StaggerContainer className="mt-10 border-t border-bone/10">
             {productionSteps.map((step) => (
@@ -321,19 +317,19 @@ export default function VeiligheidsvideoPage() {
           </h2>
           <div className="grid max-w-[68ch] gap-5">
             <p className="body-copy text-bone/[0.72]">
-              Een veiligheidsvideo moet er niet alleen goed uitzien. De inhoud
-              moet duidelijk zijn, de locatie herkenbaar en de uitleg
-              begrijpelijk voor mensen die uw organisatie nog niet kennen.
+              Een veiligheidsfilm moet niet alleen prettig te bekijken zijn. De
+              informatie moet kloppen en herkenbaar zijn voor de mensen die ermee
+              werken.
             </p>
             <p className="body-copy text-bone/[0.72]">
-              Mijn achtergrond in communicatie, videoproductie en
-              veiligheidskunde komt hier samen. Daardoor kan ik gericht
-              meedenken, ook wanneer de aangeleverde informatie technisch of
-              uitgebreid is.
+              Naast videoproducties werk ik als veiligheidskundige. Daardoor
+              begrijp ik de context van werkplekken, instructies en risico&apos;s. De
+              inhoudelijke goedkeuring van veiligheidsregels en procedures ligt
+              altijd bij jouw organisatie.
             </p>
             <p className="body-copy text-bone/[0.72]">
-              Studio Draaidoor werkt vanuit Groningen en voert videoproducties
-              uit door heel Nederland.
+              Studio DraaiDoor werkt vanuit Groningen en filmt voor opdrachtgevers
+              door heel Nederland.
             </p>
           </div>
         </Container>
@@ -366,16 +362,15 @@ export default function VeiligheidsvideoPage() {
         <Container className="grid gap-7 md:grid-cols-[1fr_auto] md:items-end">
           <div>
             <h2 className="text-3xl font-bold leading-[1.08] text-bone sm:text-4xl">
-              Uw veiligheidsinstructie duidelijk in beeld?
+              Een veiligheidsvideo voor jouw locatie?
             </h2>
             <p className="mt-5 max-w-[68ch] leading-7 text-bone/[0.68]">
-              Heeft u een bestaande poortinstructie, presentatie of
-              veiligheidsprocedure die duidelijker en compacter kan worden
-              overgebracht? Dan kijk ik graag mee naar de inhoud en de
-              mogelijkheden voor video.
+              Heb je een poortinstructie, presentatie of werkinstructie die je als
+              video wilt aanbieden? Vertel me wat je nodig hebt. Dan bespreken we
+              hoe we dat in beeld kunnen brengen.
             </p>
           </div>
-          <ButtonLink href="/contact">Bespreek uw veiligheidsvideo</ButtonLink>
+          <ButtonLink href="/contact">Bespreek je veiligheidsvideo</ButtonLink>
         </Container>
       </section>
     </div>

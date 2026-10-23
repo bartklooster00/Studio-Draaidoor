@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.studiodraaidoor.nl"),
   title: {
     default:
-      "Studio Draaidoor | Bedrijfsvideo laten maken voor bedrijven en organisaties",
+      "Studio DraaiDoor | Videoproductie voor bedrijven",
     template: `%s | ${site.name}`
   },
   description: site.description,

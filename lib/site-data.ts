@@ -1,10 +1,11 @@
 export const site = {
-  name: "Studio Draaidoor",
+  name: "Studio DraaiDoor",
   description:
-    "Studio Draaidoor maakt bedrijfsvideo’s, veiligheidsfilms, interviews, podcasts en aftermovies voor bedrijven en organisaties. Professioneel, helder en direct inzetbaar.",
-  footerText: "Ik maak videoproducties voor bedrijven, organisaties en events.",
+    "Studio DraaiDoor maakt bedrijfsvideo’s, projectfilms en interviews. Van het eerste idee tot de montage. Bekijk het werk en bespreek je project.",
+  footerText:
+    "Studio DraaiDoor maakt bedrijfsvideo’s, projectfilms en interviews. Vanuit Groningen, op locatie bij de opdrachtgever.",
   email: "info@studiodraaidoor.nl",
-  phone: "Op aanvraag",
+  phone: "06 53 36 66 76",
   location: "Groningen, Nederland",
   socials: {
     instagram: "https://instagram.com",
@@ -24,127 +25,128 @@ export const portfolioProjects = [
   {
     slug: "eew-delfzijl-veiligheidsfilm",
     href: "/portfolio/eew-delfzijl-veiligheidsfilm",
-    title: "EEW Delfzijl Veiligheidsfilm",
+    title: "EEW Delfzijl — veiligheidsfilm",
     client: "EEW Energy from Waste Delfzijl B.V.",
     category: "Veiligheidsfilm · Instructievideo · Poortinstructie",
-    productionType: "Veiligheidsfilm / poortinstructie / instructievideo",
+    productionType: "Veiligheidsfilm en poortinstructie",
     year: "2026",
     seoTitle:
-      "EEW Delfzijl Veiligheidsfilm | Veiligheidsfilm en poortinstructie",
+      "EEW Delfzijl veiligheidsfilm | Studio DraaiDoor",
     seoDescription:
-      "Voor EEW Delfzijl maakte ik een compacte veiligheidsfilm en poortinstructie die medewerkers en bezoekers snel en helder informeert over de belangrijkste veiligheidsregels op locatie.",
+      "Een poortinstructievideo van circa 6,5 minuut voor EEW Delfzijl, opgeleverd in het Nederlands, Engels en Duits.",
     videoUrl: "https://www.youtube-nocookie.com/embed/7lTGdY5Y5Gw",
     posterSrc: "/posters/eew-delfzijl-veiligheidsfilm.webp",
     goal:
-      "Een korte, duidelijke en professioneel afgewerkte veiligheidsfilm maken die beter aansluit op de praktijk en de vorige instructievideo van circa 35-40 minuten vervangt. De nieuwe video brengt de belangrijkste veiligheidsinformatie in ongeveer 6,5 minuut helder over aan medewerkers en bezoekers.",
+      "Medewerkers en bezoekers in korte tijd informeren over de belangrijkste veiligheidsregels en herkenbare situaties op de locatie.",
     role:
-      "Ik verzorgde het hele traject van concept en opnames tot montage en oplevering.",
+      "EEW leverde de veiligheidsinhoud en het grootste deel van het script aan. Ik dacht mee over de video-opbouw en verzorgde de opnames, montage en oplevering.",
     cardText:
-      "Een compacte veiligheidsfilm / poortinstructie voor medewerkers en bezoekers, ontwikkeld om veiligheidsinformatie sneller, duidelijker en professioneler over te brengen.",
+      "Een poortinstructie voor EEW Delfzijl, met beelden van de eigen locatie. De film brengt de belangrijkste veiligheidsregels in circa 6,5 minuut over.",
     intro:
-      "Voor EEW Energy from Waste Delfzijl B.V. maakte ik een korte en duidelijke veiligheidsfilm die medewerkers en bezoekers informeert over de belangrijkste veiligheidsregels op locatie. De productie verving een veel langere instructievideo en brengt de essentie in ongeveer 6,5 minuut helder over.",
+      "Voor EEW Delfzijl maakte ik een nieuwe poortinstructievideo voor medewerkers en bezoekers. De eerdere film duurde ongeveer 35 tot 40 minuten. De nieuwe versie behandelt de belangrijkste regels in circa 6,5 minuut en laat de eigen locatie zien.",
     description:
-      "Voor EEW Energy from Waste Delfzijl B.V. maakte ik een veiligheidsfilm die medewerkers en bezoekers snel en duidelijk informeert over de belangrijkste veiligheidsregels op locatie. De focus lag op heldere communicatie, een professionele uitstraling en een compacte opzet die beter aansluit op de praktijk.",
+      "Voor EEW Delfzijl maakte ik een nieuwe poortinstructievideo voor medewerkers en bezoekers. De eerdere film duurde ongeveer 35 tot 40 minuten. De nieuwe versie behandelt de belangrijkste regels in circa 6,5 minuut en laat de eigen locatie zien.",
     longDescription: [
-      "Ik maakte een veiligheidsfilm / poortinstructie in het Nederlands, Engels en Duits, zodat medewerkers en bezoekers op een toegankelijke en professionele manier worden geïnformeerd over de veiligheidsregels op locatie."
+      "De video gebruikt beelden van de locatie waar medewerkers en bezoekers daadwerkelijk komen. Zo sluit de uitleg aan op de praktijk. De film is in drie talen opgeleverd, zodat EEW dezelfde kerninformatie aan verschillende doelgroepen kan aanbieden."
     ],
     result:
-      "Een compacte veiligheidsfilm die sneller te bekijken is en direct inzetbaar is voor bezoekers en medewerkers op locatie."
+      "Een veiligheidsfilm van circa 6,5 minuut, opgeleverd in het Nederlands, Engels en Duits."
   },
   {
     slug: "basher-beatdown-promo",
     href: "/portfolio/basher-beatdown-promo",
-    title: "Basher Beatdown Promo",
+    title: "Basher Beatdown — gamepromo",
     client: "Crash Interactive",
     category: "Promo video · Game promo",
-    productionType: "Promo video voor een game",
+    productionType: "Promotievideo voor een game",
     year: "2026",
-    seoTitle: "Basher Beatdown Promo | Promo video voor game en campagne",
+    seoTitle: "Basher Beatdown gamepromo | Studio DraaiDoor",
     seoDescription:
-      "Voor Crash Interactive maakte ik een promo video voor Basher Beatdown die de sfeer, energie en gameplay van het spel krachtig overbrengt.",
+      "Een promotievideo voor de game Basher Beatdown, gemaakt voor Crash Interactive. Bekijk de video en lees over de productie.",
     videoUrl: "https://www.youtube-nocookie.com/embed/OF1OX8UL5_k",
     posterSrc: "/posters/basher-beatdown-promo.webp",
     goal:
-      "Mensen kennis laten maken met het spel en het gevoel van de gameplay overbrengen in een video die zowel sfeer als spelbeeld sterk laat zien.",
+      "Potentiële spelers laten kennismaken met de gameplay en de sfeer van Basher Beatdown.",
     role:
-      "Ik verzorgde alles van A tot Z, van het opnemen van de beelden tot montage en oplevering.",
+      "Ik verzorgde het vastleggen van het spelmateriaal en de montage van de promo.",
     cardText:
-      "Een promo video voor Crash Interactive, gemaakt om spelers kennis te laten maken met de sfeer, energie en gameplay van het spel Basher Beatdown.",
+      "Een promotievideo voor Basher Beatdown, gemaakt voor Crash Interactive. Met gameplay, tempo en montage die de sfeer van het spel laten zien.",
     intro:
-      "Voor Crash Interactive maakte ik een promo video voor de game Basher Beatdown. In deze productie lag de focus op het overbrengen van de energie, sfeer en speelervaring van het spel, terwijl de gameplay zelf ook duidelijk zichtbaar bleef.",
+      "Voor Crash Interactive maakte ik een promotievideo voor Basher Beatdown. De opdracht was om de energie van het spel zichtbaar te maken, zonder de gameplay naar de achtergrond te drukken.",
     description:
-      "Voor Crash Interactive maakte ik een promo video voor het spel Basher Beatdown. Het doel was om niet alleen het spel te laten zien, maar vooral ook het gevoel, tempo en de energie van het spelen over te brengen.",
+      "Voor Crash Interactive maakte ik een promotievideo voor Basher Beatdown. De opdracht was om de energie van het spel zichtbaar te maken, zonder de gameplay naar de achtergrond te drukken.",
     longDescription: [
-      "Tijdens deze productie werkte ik zonder vast script en legde ik speelmomenten vast om de energie, dynamiek en beleving van het spel op een natuurlijke manier over te brengen."
+      "Deze productie had geen vast script. Ik selecteerde de momenten die het karakter van het spel goed laten zien en bouwde de montage op rond tempo, dynamiek en afwisseling."
     ],
     result:
-      "Een energieke promo die sfeer, spelbeeld en beleving in korte tijd samenbrengt."
+      "Een korte promotievideo waarin gameplay en sfeer samenkomen."
   },
   {
     slug: "eew-qhse-lancering",
     href: "/portfolio/eew-qhse-lancering",
-    title: "EEW QHSE Lancering",
+    title: "EEW Delfzijl — QHSE-lancering",
     client: "EEW Energy from Waste Delfzijl B.V.",
     category: "Lanceringsvideo · Interne communicatievideo",
-    productionType: "Lanceringsvideo / interne communicatievideo",
+    productionType: "Interne communicatievideo",
     year: "2026",
     seoTitle:
-      "EEW QHSE Lancering | Interne communicatie video en lanceringsvideo",
+      "EEW Delfzijl QHSE-video | Studio DraaiDoor",
     seoDescription:
-      "Voor EEW Delfzijl maakte ik een lanceringsvideo voor de QHSE-afdeling om medewerkers kennis te laten maken met het team en hun functies.",
+      "Een introductievideo voor de QHSE-afdeling van EEW Delfzijl, waarin medewerkers en hun functies centraal staan.",
     videoUrl: "https://www.youtube-nocookie.com/embed/J6NJQWKars4",
     posterSrc: "/posters/eew-qhse-lancering.webp",
     goal:
-      "Medewerkers kennis laten maken met de mensen van de QHSE-afdeling en duidelijk maken wie welke functie heeft.",
-    role: "Ik verzorgde het project van A tot Z.",
+      "Collega’s laten kennismaken met de QHSE-afdeling en inzicht geven in de verschillende functies.",
+    role:
+      "Ik verzorgde de productie, van de voorbereiding en opnames tot de montage en oplevering.",
     cardText:
-      "Een lanceringsvideo voor de nieuwe QHSE-afdeling van EEW Delfzijl, bedoeld om medewerkers kennis te laten maken met het team en hun functies.",
+      "Een introductievideo voor de nieuwe QHSE-afdeling van EEW Delfzijl. De film laat medewerkers kennismaken met het team en de verschillende functies.",
     intro:
-      "Voor EEW Energy from Waste Delfzijl B.V. maakte ik een lanceringsvideo voor de QHSE-afdeling. Het doel was om medewerkers op een toegankelijke manier kennis te laten maken met het team, de verschillende functies en de rol van de afdeling binnen de organisatie.",
+      "Voor EEW Delfzijl maakte ik een video ter introductie van de QHSE-afdeling. Medewerkers krijgen te zien wie er bij de afdeling werken en welke functies zij binnen de organisatie hebben.",
     description:
-      "Voor EEW Energy from Waste Delfzijl B.V. maakte ik een lanceringsvideo voor de QHSE-afdeling. De video is ontwikkeld om medewerkers op een duidelijke manier kennis te laten maken met de mensen achter de afdeling en hun rol binnen de organisatie.",
+      "Voor EEW Delfzijl maakte ik een video ter introductie van de QHSE-afdeling. Medewerkers krijgen te zien wie er bij de afdeling werken en welke functies zij binnen de organisatie hebben.",
     longDescription: [
-      "In deze video introduceer ik de QHSE-afdeling op een duidelijke en toegankelijke manier, zodat medewerkers snel zien wie waarvoor verantwoordelijk is."
+      "De video brengt de mensen achter de afdeling in beeld. In plaats van alleen functienamen te noemen, laat de productie zien wie bij welke rol hoort. Zo krijgt de nieuwe afdeling een herkenbaar gezicht binnen EEW."
     ],
     result:
-      "Een heldere interne video die de afdeling zichtbaar maakt en collega’s snel context geeft."
+      "Een interne introductievideo waarin de medewerkers en functies van de afdeling centraal staan."
   }
 ];
 
 export const services = [
   {
-    title: "Aftermovies",
+    title: "Bedrijfsvideo’s",
     description:
-      "Sfeer, beleving en professionele vastlegging van events en bijeenkomsten.",
+      "Laat zien wat je bedrijf doet en wie het werk mogelijk maken.",
     detail:
-      "Met een aftermovie leg ik de energie en belangrijkste momenten van een event professioneel vast. Ik zorg voor een heldere montage die geschikt is voor externe communicatie, social media en een sterke terugblik."
+      "Wie zijn jullie, wat doen jullie en wat moet een klant daarvan begrijpen? Samen bepalen we wat de film moet laten zien. Ik verzorg de opnames en montage voor gebruik op je website, in presentaties of in een campagne."
   },
   {
     title: "Interviews",
     description:
-      "Heldere en geloofwaardige video’s voor medewerkers, klanten of interne communicatie.",
+      "Laat klanten, medewerkers of experts zelf hun verhaal vertellen.",
     detail:
-      "Interviews geven een organisatie een menselijk en betrouwbaar gezicht. Ik maak video’s die duidelijk overkomen en professioneel aansluiten bij uw communicatie, met aandacht voor licht, geluid en inhoud."
+      "Een goed interview gaat niet alleen over de juiste vragen. Ook de setting, het licht, het geluid en de montage bepalen hoe iemand overkomt. Ik help bij de voorbereiding en maak er een video van die je kunt gebruiken voor je website, interne communicatie of een campagne."
+  },
+  {
+    title: "Aftermovies",
+    description:
+      "De mensen, momenten en sfeer van je evenement in één film.",
+    detail:
+      "Ik leg de sfeer en belangrijkste momenten van je evenement vast. Daarna maak ik een montage die je kunt delen als terugblik, op sociale media of om de volgende editie onder de aandacht te brengen."
   },
   {
     title: "Podcasts",
     description:
-      "Professionele opnames voor organisaties die inhoud willen delen in een sterke vorm.",
+      "Gesprekken vastleggen met aandacht voor beeld én geluid.",
     detail:
-      "Voor organisaties die kennis, gesprekken of visie willen delen, bied ik een videopodcast als krachtige vorm. Ik verzorg een professionele opname-opstelling en lever materiaal dat bruikbaar is voor meerdere kanalen."
-  },
-  {
-    title: "Bedrijfsvideo’s",
-    description:
-      "Video’s die uw organisatie, werkwijze of boodschap duidelijk en professioneel overbrengen.",
-    detail:
-      "Een bedrijfsvideo maakt zichtbaar waar uw organisatie voor staat. Ik vertaal uw werkwijze, dienst of boodschap naar een verzorgde video die inzetbaar is op uw website, in presentaties en op online kanalen."
+      "Met een videopodcast geef je een gesprek ook beeld. Ik verzorg de camera- en geluidsopnames en monteer het materiaal tot een aflevering. Korte fragmenten voor andere kanalen kunnen we in dezelfde productie meenemen."
   }
 ];
 
 export const processSteps = [
-  "Kennismaking en afstemming",
-  "Concept en planning",
-  "Opname op locatie",
+  "Kennismaking en doel",
+  "Concept en voorbereiding",
+  "Opnames op locatie",
   "Montage en oplevering"
 ];

@@ -11,10 +11,10 @@ import { portfolioProjects } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Portfolio | Videoprojecten van Studio Draaidoor"
+    absolute: "Portfolio | Video's van Studio DraaiDoor"
   },
   description:
-    "Bekijk videoprojecten van Studio Draaidoor, van veiligheidsfilms en promo video’s tot lanceringsvideo’s voor bedrijven en organisaties.",
+    "Bekijk videoproducties voor EEW Delfzijl en Crash Interactive, met de opdracht, mijn rol en de volledige films.",
   alternates: {
     canonical: "/portfolio"
   }
@@ -33,14 +33,14 @@ export default function PortfolioPage() {
             </StaggerItem>
             <StaggerItem>
               <h1 className="type-section-large mt-4 max-w-[720px] text-bone">
-                Videoprojecten voor bedrijven
+                Een selectie uit mijn werk.
               </h1>
             </StaggerItem>
             <StaggerItem>
               <p className="body-copy mt-6 max-w-[68ch] text-bone/[0.72]">
-                Een selectie van veiligheidsfilms, bedrijfsvideo’s en
-                promotievideo’s. Per project zie je het doel, mijn rol en het
-                eindresultaat.
+                Hier vind je drie producties voor EEW Delfzijl en Crash
+                Interactive. Bij iedere film lees je waarvoor hij is gemaakt en
+                welk deel van de productie ik heb verzorgd.
               </p>
             </StaggerItem>
           </StaggerContainer>
@@ -105,7 +105,7 @@ export default function PortfolioPage() {
                     Bekijk volledige case
                   </ButtonLink>
                   <ButtonLink href="/contact" variant="secondary">
-                    Project bespreken
+                    Bespreek je project
                   </ButtonLink>
                 </div>
               </StaggerItem>

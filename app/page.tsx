@@ -3,11 +3,10 @@ import { CinematicHomePrototype } from "@/components/CinematicHomePrototype";
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "Studio Draaidoor | Bedrijfsvideo laten maken voor bedrijven en organisaties"
+    absolute: "Studio DraaiDoor | Videoproductie voor bedrijven"
   },
   description:
-    "Studio Draaidoor maakt bedrijfsvideo’s, veiligheidsfilms, interviews, podcasts en aftermovies voor bedrijven en organisaties. Professioneel, helder en direct inzetbaar.",
+    "Studio DraaiDoor maakt bedrijfsvideo’s, projectfilms en interviews. Van het eerste idee tot de montage. Bekijk het werk en bespreek je project.",
   alternates: {
     canonical: "https://www.studiodraaidoor.nl/"
   }

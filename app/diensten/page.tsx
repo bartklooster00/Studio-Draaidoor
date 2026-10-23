@@ -12,11 +12,10 @@ import { processSteps, services } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "Diensten | Videoproductie voor bedrijven, interviews, aftermovies en podcasts"
+    absolute: "Diensten | Studio DraaiDoor"
   },
   description:
-    "Ik maak videoproducties voor bedrijven en organisaties, zoals bedrijfsvideo’s, interviews, podcasts en aftermovies. Bekijk welke vorm het beste past bij uw doel.",
+    "Bekijk de videoproducties van Studio DraaiDoor: bedrijfsvideo’s, interviews, videopodcasts, aftermovies en veiligheidsvideo’s.",
   alternates: {
     canonical: "/diensten"
   }
@@ -35,9 +34,9 @@ export default function DienstenPage() {
         <Container>
           <SectionIntro
             eyebrow="Diensten"
-            title="Videoproducties voor bedrijven, organisaties en events"
+            title="Videoproductie voor bedrijven"
             headingLevel="h1"
-            text="Ik help bedrijven en organisaties met videoproducties die professioneel ogen en direct inzetbaar zijn voor communicatie, zichtbaarheid en merkbeleving. Denk aan bedrijfsvideo’s, interviews, podcasts en aftermovies die passen bij het doel, de doelgroep en de boodschap."
+            text="Een bedrijfsvideo, interview, aftermovie of videopodcast vraagt telkens iets anders. Ik bespreek met je voor wie de film bedoeld is, verzorg de opnames en monteer voor het gebruik dat je voor ogen hebt."
           />
           <StaggerContainer className="mt-10 grid gap-4">
             {services.map((service, index) => (
@@ -71,18 +70,18 @@ export default function DienstenPage() {
             <StaggerItem className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
               <div>
                 <h2 className="text-2xl font-semibold text-bone">
-                  Veiligheidsvideo
+                  Veiligheids- en instructievideo’s
                 </h2>
                 <p className="mt-3 max-w-[58ch] leading-7 text-bone/[0.66]">
-                  Voor poortinstructies, veiligheidsinstructies en toolboxen op
-                  locatie.
+                  Van poortinstructies tot toolboxen: laat veiligheidsinformatie
+                  zien op de plek waar deze van belang is.
                 </p>
               </div>
               <ButtonLink
                 href="/veiligheidsvideo-laten-maken"
                 variant="secondary"
               >
-                Meer over veiligheidsvideo’s
+                Bekijk veiligheidsvideo’s
               </ButtonLink>
             </StaggerItem>
           </StaggerContainer>
@@ -93,8 +92,8 @@ export default function DienstenPage() {
         <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <SectionIntro
             eyebrow="Werkwijze"
-            title="Van idee tot oplevering"
-            text="Ik houd het traject overzichtelijk, met korte lijnen en duidelijke afstemming. Zo weet u waar u aan toe bent en werk ik toe naar een eindresultaat dat direct bruikbaar is."
+            title="Van eerste idee tot eindmontage"
+            text="Je hoeft bij het eerste gesprek nog geen script klaar te hebben. We bespreken wat je wilt bereiken, bepalen wat daarvoor nodig is en werken van daaruit naar de opnames en montage."
           />
           <StaggerContainer className="grid gap-3">
             {processSteps.map((step, index) => (
@@ -113,9 +112,9 @@ export default function DienstenPage() {
       </section>
 
       <CtaBand
-        eyebrow="Benieuwd wat past bij uw organisatie?"
-        title="Een videoproject bespreken?"
-        buttonLabel="Project bespreken"
+        eyebrow="Heb je iets in gedachten?"
+        title="Vertel me wat je wilt maken."
+        buttonLabel="Neem contact op"
       />
     </div>
   );

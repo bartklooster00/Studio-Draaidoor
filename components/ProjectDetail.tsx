@@ -37,7 +37,7 @@ export function ProjectDetail({
     ["Opdrachtgever", project.client],
     ["Type productie", project.productionType],
     ["Doel", project.goal],
-    ["Rol Studio Draaidoor", project.role],
+    ["Mijn rol", project.role],
     ...(project.result ? [["Resultaat", project.result]] : [])
   ];
 
@@ -85,7 +85,7 @@ export function ProjectDetail({
               ))}
               <StaggerItem>
                 <h2 className="text-2xl font-bold leading-[1.2] text-bone">
-                  Ook een videoproject bespreken?
+                  Ook iets in beeld brengen?
                 </h2>
               </StaggerItem>
             </div>
@@ -94,7 +94,7 @@ export function ProjectDetail({
                 Bekijk video
               </ButtonLink>
               <ButtonLink href="/contact" variant="secondary">
-                Project bespreken
+                Bespreek je project
               </ButtonLink>
             </StaggerItem>
           </StaggerContainer>

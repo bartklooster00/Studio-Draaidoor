@@ -11,11 +11,10 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "Over Studio Draaidoor | Bart Klooster, videograaf voor bedrijven en organisaties"
+    absolute: "Over Bart Klooster | Studio DraaiDoor"
   },
   description:
-    "Ik ben Bart Klooster van Studio Draaidoor. Ik maak videoproducties voor bedrijven, organisaties en events met focus op heldere communicatie en professionele uitstraling.",
+    "Maak kennis met Bart Klooster, videomaker en oprichter van Studio DraaiDoor. Direct contact van het eerste gesprek tot de montage.",
   alternates: {
     canonical: "/over"
   }
@@ -28,10 +27,10 @@ export default function OverPage() {
         <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <SectionIntro
-              eyebrow="Over Studio Draaidoor"
-              title="Professioneel in beeld, zonder onnodig gedoe"
+              eyebrow="Over Studio DraaiDoor"
+              title="De maker achter Studio DraaiDoor."
               headingLevel="h1"
-              text="Ik ben Bart Klooster, oprichter van Studio Draaidoor. Ik maak videoproducties voor bedrijven, organisaties en events die niet alleen goed moeten ogen, maar ook functioneel moeten zijn in communicatie en uitstraling."
+              text="Studio DraaiDoor is een zelfstandig videoproductiebedrijf uit Groningen. Ik maak films voor bedrijven en organisaties, van interviews en projectfilms tot video’s voor interne communicatie."
             />
             <FadeUp className="mt-8">
               <div className="rounded-lg border border-bone/10 bg-bone/[0.035] p-6 lg:p-7">
@@ -39,14 +38,13 @@ export default function OverPage() {
                   Bart Klooster
                 </h2>
                 <p className="mt-2 text-sm font-semibold uppercase tracking-[0.22em] text-copper">
-                  Oprichter van Studio Draaidoor
+                  Videomaker en oprichter
                 </p>
                 <p className="mt-5 leading-7 text-bone/[0.68]">
-                  Achter Studio Draaidoor sta ik, Bart Klooster. Met een
-                  praktische aanpak en oog voor kwaliteit werk ik aan
-                  videoproducties die inhoud en uitstraling combineren. Van
-                  eerste afstemming tot eindmontage zorg ik voor duidelijke
-                  communicatie en een verzorgd eindresultaat.
+                  Mijn naam is Bart Klooster. Ik ben betrokken vanaf het eerste
+                  gesprek en verzorg het camerawerk en de montage. Als een
+                  productie om extra mensen of apparatuur vraagt, stem ik dat met
+                  je af en schakel ik mijn netwerk in.
                 </p>
               </div>
             </FadeUp>
@@ -70,20 +68,20 @@ export default function OverPage() {
           <StaggerContainer className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
             [
-              "Professionele uitstraling",
-              "Ik zorg voor verzorgd beeld, goed geluid en een montage die past bij zakelijke communicatie."
+              "Eerst de opdracht",
+              "Voor wie maken we de film, en wat moet die persoon na het kijken weten of begrijpen? Dat bespreken we voordat we gaan filmen."
             ],
             [
-              "Heldere communicatie",
-              "Ik werk met duidelijke afspraken, korte lijnen en een aanpak die overzichtelijk blijft."
+              "Aandacht voor mensen",
+              "Niet iedereen staat dagelijks voor een camera. Ik neem de tijd voor de opname en let op licht, beeld en geluid."
             ],
             [
-              "Betrouwbare samenwerking",
-              "Ik werk gestructureerd en denk mee over wat nodig is om tot een bruikbaar eindresultaat te komen."
+              "Direct contact",
+              "Je overlegt met mij over planning, opnames en montage. Zo weet je wie de keuzes maakt en bij wie je terechtkunt met vragen."
             ],
             [
-              "Praktische aanpak",
-              "Ik houd het proces efficiënt en doelgericht, zonder onnodig complexe productielagen."
+              "De juiste inzet per productie",
+              "Soms is één camera voldoende, soms zijn extra mensen of apparatuur nodig. We bespreken vooraf wat bij de opdracht past."
             ]
           ].map(([title, text]) => (
             <StaggerItem key={title}>
@@ -99,7 +97,11 @@ export default function OverPage() {
         </Container>
       </section>
 
-      <CtaBand />
+      <CtaBand
+        eyebrow="Heb je een idee voor een video?"
+        title="Laten we je project bespreken."
+        buttonLabel="Neem contact op"
+      />
     </div>
   );
 }
