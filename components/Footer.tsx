@@ -52,6 +52,14 @@ export function Footer() {
             </p>
             <p>{site.location}</p>
             <p>
+              <Link
+                className="transition-colors hover:text-white"
+                href="/privacy"
+              >
+                Privacyverklaring
+              </Link>
+            </p>
+            <p>
               <CookieSettingsLink />
             </p>
           </div>

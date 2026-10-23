@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { OPEN_CONSENT_SETTINGS_EVENT } from "@/components/CookieSettingsLink";
@@ -237,7 +238,13 @@ export function AnalyticsConsent() {
             Studio DraaiDoor gebruikt noodzakelijke opslag om je keuze te onthouden.
             Met jouw toestemming gebruiken we Google Analytics om websitebezoek en
             contactaanvragen te meten. Je kunt statistieken weigeren en je keuze
-            later altijd wijzigen.
+            later altijd wijzigen. Lees meer in de{" "}
+            <Link
+              className="text-white underline decoration-white/45 underline-offset-4 transition-colors hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              href="/privacy"
+            >
+              privacyverklaring
+            </Link>.
           </p>
         </div>
         <div className="grid w-full grid-cols-2 gap-3 lg:w-auto lg:min-w-[390px]">

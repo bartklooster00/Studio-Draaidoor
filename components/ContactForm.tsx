@@ -1,6 +1,7 @@
 "use client";
 
 import { useForm } from "@formspree/react";
+import Link from "next/link";
 import type { FormEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -166,6 +167,17 @@ export function ContactForm() {
           </span>
         ) : null}
       </label>
+
+      <p className="mt-4 max-w-[65ch] text-sm leading-6 text-bone/[0.62]">
+        We gebruiken je gegevens alleen om je aanvraag te behandelen. Lees hoe we
+        met je gegevens omgaan in onze{" "}
+        <Link
+          className="text-bone underline decoration-bone/40 underline-offset-4 transition-colors hover:text-white hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          href="/privacy"
+        >
+          privacyverklaring
+        </Link>.
+      </p>
 
       {hasFormspreeError ? (
         <p
