@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { navigation, site } from "@/lib/site-data";
+import { navigation } from "@/lib/site-data";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,27 +30,16 @@ export function Header() {
         className="site-container flex h-full items-center justify-between"
         aria-label="Hoofdnavigatie"
       >
-        <Link className="group flex items-center gap-3 sm:gap-5" href="/">
+        <Link aria-label="Studio DraaiDoor" className="flex items-center" href="/">
           <Image
             alt=""
             aria-hidden
-            className={`h-auto transition-[width] duration-200 motion-reduce:transition-none ${
-              isScrolled
-                ? "w-[34px] min-[768px]:w-[34px]"
-                : "w-[38px] min-[768px]:w-[42px]"
-            }`}
-            height={29}
+            className="h-auto w-[150px] min-[360px]:w-[170px] md:w-[194px]"
+            height={47}
             priority
-            src="/brand/studio-draaidoor-camera-d.svg"
-            width={48}
+            src="/brand/studio-draaidoor-logo-white.svg"
+            width={350}
           />
-          <span
-            className={`inline font-bold leading-none tracking-normal text-white transition-[font-size] duration-200 group-hover:text-white motion-reduce:transition-none ${
-              isScrolled ? "text-[16px] lg:text-[18px]" : "text-[17px] lg:text-xl"
-            }`}
-          >
-            {site.name}
-          </span>
         </Link>
 
         <div className="hidden items-center gap-10 md:flex">

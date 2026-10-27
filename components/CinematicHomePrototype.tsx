@@ -7,8 +7,8 @@ import { Container } from "@/components/Container";
 import { EditorialReveal } from "@/components/EditorialReveal";
 import { portfolioProjects } from "@/lib/site-data";
 
-const HERO_VIDEO_SRC = "/video/drone-achter-auto-720p.mp4";
-const HERO_POSTER = "/posters/hero-car.webp";
+const HERO_VIDEO_SRC = "/videos/studio-draaidoor-header.mp4";
+const HERO_POSTER = "/images/studio-draaidoor-header-poster.webp";
 
 const primaryButton =
   "inline-flex h-14 w-full items-center justify-center whitespace-nowrap rounded-lg border border-white bg-white px-8 text-lg font-bold text-[#050505] transition-colors hover:border-[#F5F3EF] hover:bg-[#F5F3EF] sm:w-auto";
@@ -181,6 +181,7 @@ export function CinematicHomePrototype() {
         setHeroVideoReady(true);
       }
     };
+    const showPoster = () => setHeroVideoReady(false);
 
     markReady();
 
@@ -188,12 +189,14 @@ export function CinematicHomePrototype() {
     video.addEventListener("canplay", markReady);
     video.addEventListener("playing", markReady);
     video.addEventListener("timeupdate", markReady);
+    video.addEventListener("error", showPoster);
 
     return () => {
       video.removeEventListener("loadeddata", markReady);
       video.removeEventListener("canplay", markReady);
       video.removeEventListener("playing", markReady);
       video.removeEventListener("timeupdate", markReady);
+      video.removeEventListener("error", showPoster);
     };
   }, [heroVideoEnabled]);
 
@@ -204,7 +207,7 @@ export function CinematicHomePrototype() {
         <Image
           alt=""
           aria-hidden
-          className={`home-hero-poster object-cover object-[68%_center] transition-opacity duration-[180ms] ${
+          className={`home-hero-poster object-cover object-center transition-opacity duration-[180ms] lg:object-[68%_center] ${
             heroVideoReady ? "opacity-0" : "opacity-100"
           }`}
           fill
@@ -216,7 +219,7 @@ export function CinematicHomePrototype() {
         {heroVideoEnabled ? (
           <video
             autoPlay
-            className={`home-hero-video absolute inset-0 h-full w-full object-cover object-[68%_center] transition-opacity duration-[180ms] ${
+            className={`home-hero-video absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-[180ms] lg:object-[68%_center] ${
               heroVideoReady ? "opacity-100" : "opacity-0"
             }`}
             loop
