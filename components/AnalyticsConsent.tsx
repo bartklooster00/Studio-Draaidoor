@@ -9,6 +9,7 @@ import {
   buildAnalyticsPageLocation,
   createStoredConsent,
   parseStoredConsent,
+  protectAnalyticsUrls,
   removeAnalyticsCookies,
   sanitizeAnalyticsReferrer,
   type AnalyticsConsentChoice
@@ -36,6 +37,26 @@ const measurementId = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID;
 const hasValidMeasurementId = Boolean(
   measurementId && /^G-[A-Z0-9]{6,}$/i.test(measurementId)
 );
+let stopUrlProtection: (() => void) | undefined;
+
+function prepareAnalyticsUrls() {
+  if (!stopUrlProtection) {
+    stopUrlProtection = protectAnalyticsUrls(window, (context) => {
+      if (getAnalyticsConsent() !== "granted") return;
+      // Global defaults also protect events emitted by Enhanced Measurement.
+      window.gtag?.("set", context);
+    });
+  }
+
+  return {
+    page_location: buildAnalyticsPageLocation(
+      window.location.origin,
+      window.location.pathname,
+      window.location.search
+    ),
+    page_referrer: sanitizeAnalyticsReferrer(document.referrer)
+  };
+}
 
 function setGoogleDisabled(disabled: boolean) {
   if (!measurementId) return;
@@ -61,6 +82,8 @@ function configureGoogleAnalytics() {
     return;
   }
 
+  const context = prepareAnalyticsUrls();
+  window.gtag("set", context);
   window.gtag("js", new Date());
   window.gtag("config", measurementId, { send_page_view: false });
   window.studioDraaidoorGaConfigured = true;
@@ -74,6 +97,7 @@ function loadGoogleAnalytics() {
 
   setGoogleDisabled(false);
   ensureGtagQueue();
+  window.gtag?.("set", prepareAnalyticsUrls());
   window.gtag?.(
     "consent",
     window.studioDraaidoorGaConfigured ? "update" : "default",
@@ -133,6 +157,8 @@ function denyGoogleAnalytics() {
     analytics_storage: "denied"
   });
   removeAnalyticsCookies();
+  stopUrlProtection?.();
+  stopUrlProtection = undefined;
 }
 
 export function AnalyticsConsent() {
@@ -160,6 +186,11 @@ export function AnalyticsConsent() {
       setAnalyticsConsent("unknown");
       setAnalyticsReady(false);
     }
+
+    return () => {
+      stopUrlProtection?.();
+      stopUrlProtection = undefined;
+    };
   }, []);
 
   useEffect(() => {
@@ -186,14 +217,10 @@ export function AnalyticsConsent() {
       return;
     }
 
+    const context = prepareAnalyticsUrls();
     window.gtag("event", "page_view", {
-      page_location: buildAnalyticsPageLocation(
-        window.location.origin,
-        pathname,
-        window.location.search
-      ),
+      ...context,
       page_path: pathname,
-      page_referrer: sanitizeAnalyticsReferrer(document.referrer),
       page_title: document.title,
       send_to: measurementId
     });

@@ -10,6 +10,12 @@ const ALLOWED_UTM_PARAMETERS = [
   "utm_content"
 ] as const;
 const SAFE_UTM_VALUE = /^[A-Za-z0-9._~-]{1,100}$/;
+const SECTION_FRAGMENTS = new Set([
+  "#bedrijfsvideo",
+  "#interview",
+  "#aftermovie",
+  "#project-video"
+]);
 
 export type AnalyticsConsentChoice = "denied" | "granted";
 
@@ -107,6 +113,78 @@ export function sanitizeAnalyticsReferrer(referrer: string) {
   } catch {
     return "";
   }
+}
+
+export type AnalyticsPageContext = Readonly<{
+  page_location: string;
+  page_referrer: string;
+}>;
+
+type AnalyticsBrowser = Pick<
+  Window,
+  "location" | "history" | "document" | "addEventListener" | "removeEventListener"
+>;
+
+export function sanitizeAnalyticsNavigationUrl(url: URL) {
+  const location = buildAnalyticsPageLocation(url.origin, url.pathname, url.search);
+  return location + (SECTION_FRAGMENTS.has(url.hash) ? url.hash : "");
+}
+
+// Keep URLs safe before both Next.js and Google's history listeners observe them.
+export function protectAnalyticsUrls(
+  browser: AnalyticsBrowser,
+  publish: (context: AnalyticsPageContext) => void
+) {
+  const history = browser.history;
+  const originalPush = history.pushState;
+  const originalReplace = history.replaceState;
+  const referrer = sanitizeAnalyticsReferrer(browser.document.referrer);
+  let active = true;
+
+  function publishUrl(url: URL) {
+    publish({
+      page_location: buildAnalyticsPageLocation(url.origin, url.pathname, url.search),
+      page_referrer: referrer
+    });
+  }
+
+  function sanitizeCurrentUrl() {
+    const url = new URL(browser.location.href);
+    const safeUrl = sanitizeAnalyticsNavigationUrl(url);
+    if (safeUrl !== browser.location.href) {
+      originalReplace.call(history, history.state, "", safeUrl);
+    }
+    publishUrl(new URL(safeUrl));
+  }
+
+  function wrap(method: History["pushState"]): History["pushState"] {
+    return function (this: History, data, unused, url) {
+      if (!active || url == null) return method.call(this, data, unused, url);
+      const nextUrl = new URL(String(url), browser.location.href);
+      if (nextUrl.origin !== browser.location.origin) {
+        return method.call(this, data, unused, url);
+      }
+      const safeUrl = sanitizeAnalyticsNavigationUrl(nextUrl);
+      publishUrl(new URL(safeUrl));
+      return method.call(this, data, unused, safeUrl);
+    };
+  }
+
+  const push = wrap(originalPush);
+  const replace = wrap(originalReplace);
+  history.pushState = push;
+  history.replaceState = replace;
+  browser.addEventListener("popstate", sanitizeCurrentUrl, true);
+  browser.addEventListener("hashchange", sanitizeCurrentUrl, true);
+  sanitizeCurrentUrl();
+
+  return () => {
+    active = false;
+    if (history.pushState === push) history.pushState = originalPush;
+    if (history.replaceState === replace) history.replaceState = originalReplace;
+    browser.removeEventListener("popstate", sanitizeCurrentUrl, true);
+    browser.removeEventListener("hashchange", sanitizeCurrentUrl, true);
+  };
 }
 
 export function removeAnalyticsCookies() {
